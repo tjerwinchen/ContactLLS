@@ -10,6 +10,7 @@
 		1271999447FE2D9D1DE17C21 /* Pods_ContactLLS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A977CB3764CAB35C594281 /* Pods_ContactLLS.framework */; };
 		A33091EE1EFA68ED000D522F /* mock_contacts.json in Resources */ = {isa = PBXBuildFile; fileRef = A33091ED1EFA68ED000D522F /* mock_contacts.json */; };
 		A35199891EFB55180001AEDD /* ContactModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35199881EFB55180001AEDD /* ContactModelController.swift */; };
+		A351998D1EFB859B0001AEDD /* ModelCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A351998C1EFB859B0001AEDD /* ModelCellDelegate.swift */; };
 		A39FE5B21EF8B3DA00C53662 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39FE5B11EF8B3DA00C53662 /* AppDelegate.swift */; };
 		A39FE5B71EF8B3DA00C53662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A39FE5B51EF8B3DA00C53662 /* Main.storyboard */; };
 		A39FE5BA1EF8B3DA00C53662 /* ContactLLS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A39FE5B81EF8B3DA00C53662 /* ContactLLS.xcdatamodeld */; };
@@ -52,6 +53,7 @@
 		3675D4B997335820DA9EC5B5 /* Pods-ContactLLS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactLLS.release.xcconfig"; path = "Pods/Target Support Files/Pods-ContactLLS/Pods-ContactLLS.release.xcconfig"; sourceTree = "<group>"; };
 		A33091ED1EFA68ED000D522F /* mock_contacts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mock_contacts.json; sourceTree = "<group>"; };
 		A35199881EFB55180001AEDD /* ContactModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactModelController.swift; path = ModelControllers/ContactModelController.swift; sourceTree = "<group>"; };
+		A351998C1EFB859B0001AEDD /* ModelCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelCellDelegate.swift; path = Utils/ModelCellDelegate.swift; sourceTree = "<group>"; };
 		A39FE5AE1EF8B3DA00C53662 /* ContactLLS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactLLS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A39FE5B11EF8B3DA00C53662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A39FE5B61EF8B3DA00C53662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			children = (
 				A39FE5EC1EF8B82D00C53662 /* String+Extension.swift */,
 				A39FE6001EF8C37700C53662 /* CellInterface.swift */,
+				A351998C1EFB859B0001AEDD /* ModelCellDelegate.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 			files = (
 				A39FE5ED1EF8B82D00C53662 /* String+Extension.swift in Sources */,
 				A39FE6041EF8C66300C53662 /* ContactListTableViewCell.swift in Sources */,
+				A351998D1EFB859B0001AEDD /* ModelCellDelegate.swift in Sources */,
 				A39FE6091EF8C6CF00C53662 /* ContactModel.swift in Sources */,
 				A39FE5FE1EF8C33900C53662 /* ContactListSearchResultTableViewCell.swift in Sources */,
 				A39FE5B21EF8B3DA00C53662 /* AppDelegate.swift in Sources */,

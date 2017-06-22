@@ -13,6 +13,8 @@ class ContactListTableViewController: UITableViewController {
     var _searchController: UISearchController! = nil
     var _resultCtrl:ContactListSearchResultTableViewController! = nil
     
+    var contactDict:[String:[ContactModel]] = [:]
+    
     var resultCtrl:ContactListSearchResultTableViewController {
         if _resultCtrl == nil {
             _resultCtrl = self.storyboard!.instantiateViewController(withIdentifier: "ContactListSearchResultTableViewController") as! ContactListSearchResultTableViewController
@@ -29,6 +31,14 @@ class ContactListTableViewController: UITableViewController {
         return _searchController
     }
     
+    var sortedKeys:[String] {
+        var keys = contactDict.keys.sorted()
+        keys.remove(at: 0)
+        keys.append("#")
+        
+        return keys
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,9 +48,14 @@ class ContactListTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        tableView.register(ContactListTableViewCell.cellNib, forCellReuseIdentifier: ContactListTableViewCell.id)
+        
         searchControllerDidLoad()
+        
+        let contactList = ContactModelController.loadMockContact()
+        contactDict = ContactModelController.transformContactList2Dict(contactList: contactList)
     }
-    
+
     func searchControllerDidLoad() {
         searchController.searchResultsUpdater = resultCtrl
         searchController.dimsBackgroundDuringPresentation = false
@@ -58,19 +73,28 @@ class ContactListTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        
+        return contactDict.keys.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        let key = sortedKeys[section]
+        let contactList = contactDict[key] ?? []
+        return contactList.count
     }
 
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-//
-//        return cell
-//    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ContactListTableViewCell.id, for: indexPath) as! ContactListTableViewCell
+        
+        let key = sortedKeys[indexPath.section]
+        let contactList = contactDict[key] ?? []
+
+        cell.modelDelegate = ContactModelController(model: contactList[indexPath.row])
+        cell.rendering()
+
+        return cell
+    }
 
     /*
     // Override to support conditional editing of the table view.

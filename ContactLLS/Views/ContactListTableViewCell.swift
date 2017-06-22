@@ -10,6 +10,11 @@ import UIKit
 
 class ContactListTableViewCell: UITableViewCell, CellInterface {
 
+    var modelDelegate:ModelCellDelegate? = nil
+    
+    @IBOutlet weak var firstNameLabel: UILabel!
+    @IBOutlet weak var lastNameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +26,7 @@ class ContactListTableViewCell: UITableViewCell, CellInterface {
         // Configure the view for the selected state
     }
     
+    func rendering() {
+        modelDelegate?.rendering(cell: self)
+    }
 }

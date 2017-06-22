@@ -8,9 +8,53 @@
 
 import UIKit
 
+class NameModelController:NSObject {
+    var model:NameModel? = nil
+    
+    var fullName:String {
+        let firstName = model?.firstName ?? ""
+        let lastName = model?.lastName ?? ""
+        
+        return "\(firstName) \(lastName)"
+    }
+    
+    convenience init(model:NameModel) {
+        self.init()
+        self.model = model
+    }
+}
+
 class ContactModelController: NSObject {
     
     var model:ContactModel? = nil
+    
+    var fullName:String {
+        
+        guard model?.name != nil else {
+            return ""
+        }
+        
+        return NameModelController(model: model!.name).fullName
+    }
+    
+    var firstName:String {
+        return model?.name.firstName.trimmingCharacters(in: [" "]) ?? ""
+    }
+    
+    var lastName:String {
+        return model?.name.lastName.trimmingCharacters(in: [" "]) ?? ""
+    }
+    
+    var lastNameLabelFont:UIFont {
+        return UIFont.boldSystemFont(ofSize: 17.0)
+    }
+    
+    var firstNameLabelFont:UIFont {
+        if lastName == "" {
+            return UIFont.boldSystemFont(ofSize: 17.0)
+        }
+        return UIFont.systemFont(ofSize: 17.0)
+    }
     
     static func loadMockContact() -> [ContactModel] {
         
@@ -24,5 +68,52 @@ class ContactModelController: NSObject {
         }
         
         return contactModelList
+    }
+    
+    static func transformContactList2Dict(contactList:[ContactModel]) -> [String:[ContactModel]] {
+        var contactDict:[String:[ContactModel]] = [:]
+        
+        for contact in contactList {
+            var alphabetLetter = "#"
+            
+            let contactModelCtrl = ContactModelController(model: contact)
+            if contactModelCtrl.lastName.lengthOfBytes(using: .utf8) > 0 {
+                
+                alphabetLetter = String(contactModelCtrl.lastName.characters.first!).uppercased()
+            }
+            else if contactModelCtrl.firstName.lengthOfBytes(using: .utf8) > 0 {
+                
+                alphabetLetter = String(contactModelCtrl.firstName.characters.first!).uppercased()
+            }
+            
+            if "ABCDEFGHIJKLMNOPQRSTUVWXYZ".range(of: alphabetLetter) == nil {
+                alphabetLetter = "#"
+            }
+            
+            if contactDict[alphabetLetter] == nil {
+                contactDict[alphabetLetter] = []
+            }
+            contactDict[alphabetLetter]?.append(contact)
+        }
+        
+        return contactDict
+    }
+        
+    convenience init(model:ContactModel) {
+        self.init()
+        self.model = model
+    }
+}
+
+extension ContactModelController:ModelCellDelegate {
+    
+    func rendering(cell: UITableViewCell) {
+        if let thisCell = cell as? ContactListTableViewCell {
+            thisCell.firstNameLabel.text = firstName
+            thisCell.lastNameLabel.text = lastName
+            
+            thisCell.firstNameLabel.font = firstNameLabelFont
+            thisCell.lastNameLabel.font = lastNameLabelFont
+        }
     }
 }
