@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  ContactLLS
+
+  Created by Theo Chen on 6/20/17.
+  Copyright © 2017 Theo Chen. All rights reserved.
+*/
+
+CONTACTS = "Contacts";

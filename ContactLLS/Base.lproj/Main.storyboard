@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17A264c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="B07-JX-Grb">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Contact List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ContactListViewController" customModule="ContactLLS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,105 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lf6-Xo-ah8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="iTU-dR-VDU" kind="embed" id="iyj-oU-UTk"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Lf6-Xo-ah8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="A5Z-zb-KdP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Lf6-Xo-ah8" secondAttribute="bottom" id="tZ0-wN-cEJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Lf6-Xo-ah8" secondAttribute="trailing" id="tbU-Dz-wtn"/>
+                            <constraint firstItem="Lf6-Xo-ah8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="vEN-I5-v2v"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="5uy-VO-HlD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lwL-xs-2QY"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="yev-Ih-4Og" id="4ad-LB-pDu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="yev-Ih-4Og">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="3hA-sI-zld"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="g7U-nq-r6O"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="Ovj-5A-cwg"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="KyP-Mi-xbR"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
+            <point key="canvasLocation" x="1073" y="139"/>
+        </scene>
+        <!--Contact List Table View Controller-->
+        <scene sceneID="A9a-YM-ZeT">
+            <objects>
+                <tableViewController id="iTU-dR-VDU" customClass="ContactListTableViewController" customModule="ContactLLS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5hM-w1-tqY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="iTU-dR-VDU" id="HaR-xo-CdH"/>
+                            <outlet property="delegate" destination="iTU-dR-VDU" id="Lh7-hC-ajU"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="ah9-cI-4bN" id="llK-2c-P3P"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sr7-eD-Bbn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="ah9-cI-4bN">
+                    <connections>
+                        <outlet property="delegate" destination="iTU-dR-VDU" id="1J3-54-S4a"/>
+                        <outlet property="searchContentsController" destination="iTU-dR-VDU" id="17d-UC-Few"/>
+                        <outlet property="searchResultsDataSource" destination="iTU-dR-VDU" id="Uon-kX-64C"/>
+                        <outlet property="searchResultsDelegate" destination="iTU-dR-VDU" id="NGN-Tw-oZ1"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1818" y="139"/>
+        </scene>
+        <!--Contact List Search Result Table View Controller-->
+        <scene sceneID="ZfA-Hp-VKL">
+            <objects>
+                <tableViewController storyboardIdentifier="ContactListSearchResultTableViewController" id="Vt5-jg-DJO" customClass="ContactListSearchResultTableViewController" customModule="ContactLLS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="XC9-LB-zmf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="Vt5-jg-DJO" id="9f0-rU-9TR"/>
+                            <outlet property="delegate" destination="Vt5-jg-DJO" id="LSA-XT-9mD"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q34-aB-wjq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2602" y="139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="br5-iG-a4H">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B07-JX-Grb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pk8-43-Enj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="I4i-4Q-p2z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="szH-qq-qp9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="314" y="139"/>
         </scene>
     </scenes>
 </document>
