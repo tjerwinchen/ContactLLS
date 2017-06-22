@@ -24,7 +24,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lf6-Xo-ah8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
-                                    <segue destination="iTU-dR-VDU" kind="embed" id="iyj-oU-UTk"/>
+                                    <segue destination="iTU-dR-VDU" kind="embed" id="itm-gS-KdG"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -63,6 +63,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resuseIdentifier" id="5EG-7A-7y8">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5EG-7A-7y8" id="57w-gg-6Sz">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="MrE-VN-pQ5" kind="show" identifier="showContactDetail" id="B9o-bf-jgb"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="iTU-dR-VDU" id="HaR-xo-CdH"/>
                             <outlet property="delegate" destination="iTU-dR-VDU" id="Lh7-hC-ajU"/>
@@ -83,6 +96,55 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1818" y="139"/>
+        </scene>
+        <!--Contact Detail View Controller-->
+        <scene sceneID="O6e-KH-O0N">
+            <objects>
+                <viewController storyboardIdentifier="ContactDetailViewController" id="MrE-VN-pQ5" customClass="ContactDetailViewController" customModule="ContactLLS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2x9-2y-fxV"/>
+                        <viewControllerLayoutGuide type="bottom" id="acl-2L-Wg1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="glV-4T-OlN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yd5-tl-RVw" customClass="ContactDetailHeaderView" customModule="ContactLLS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="877-H0-iND"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ebS-i5-PCM">
+                                <rect key="frame" x="0.0" y="300" width="375" height="367"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="MrE-VN-pQ5" id="orR-cC-aKt"/>
+                                    <outlet property="delegate" destination="MrE-VN-pQ5" id="HUp-Si-kuI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ebS-i5-PCM" secondAttribute="trailing" id="8dA-5W-WOk"/>
+                            <constraint firstItem="yd5-tl-RVw" firstAttribute="top" secondItem="glV-4T-OlN" secondAttribute="top" id="MeO-Zq-lBj"/>
+                            <constraint firstItem="yd5-tl-RVw" firstAttribute="leading" secondItem="glV-4T-OlN" secondAttribute="leading" id="QrR-q6-eBH"/>
+                            <constraint firstItem="ebS-i5-PCM" firstAttribute="leading" secondItem="glV-4T-OlN" secondAttribute="leading" id="clN-hG-YWi"/>
+                            <constraint firstItem="acl-2L-Wg1" firstAttribute="top" secondItem="ebS-i5-PCM" secondAttribute="bottom" id="d2F-Px-pKL"/>
+                            <constraint firstAttribute="trailing" secondItem="yd5-tl-RVw" secondAttribute="trailing" id="e9x-Fp-yrg"/>
+                            <constraint firstItem="ebS-i5-PCM" firstAttribute="top" secondItem="yd5-tl-RVw" secondAttribute="bottom" id="m5v-sq-ZvU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="TVl-GX-fiv"/>
+                    <connections>
+                        <outlet property="headerView" destination="yd5-tl-RVw" id="Amy-K7-oiI"/>
+                        <outlet property="tableView" destination="ebS-i5-PCM" id="djU-pK-Pcj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tNp-bw-f2O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1816.8" y="901.79910044977521"/>
         </scene>
         <!--Contact List Search Result Table View Controller-->
         <scene sceneID="ZfA-Hp-VKL">

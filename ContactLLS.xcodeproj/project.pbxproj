@@ -11,6 +11,11 @@
 		A33091EE1EFA68ED000D522F /* mock_contacts.json in Resources */ = {isa = PBXBuildFile; fileRef = A33091ED1EFA68ED000D522F /* mock_contacts.json */; };
 		A35199891EFB55180001AEDD /* ContactModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35199881EFB55180001AEDD /* ContactModelController.swift */; };
 		A351998D1EFB859B0001AEDD /* ModelCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A351998C1EFB859B0001AEDD /* ModelCellDelegate.swift */; };
+		A351998F1EFBAF990001AEDD /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A351998E1EFBAF990001AEDD /* ContactDetailViewController.swift */; };
+		A35199911EFBB2340001AEDD /* ContactDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35199901EFBB2340001AEDD /* ContactDetailHeaderView.swift */; };
+		A35199951EFBB4DC0001AEDD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35199941EFBB4DC0001AEDD /* BaseViewController.swift */; };
+		A35199971EFBC4440001AEDD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35199961EFBC4440001AEDD /* UIColor+Extension.swift */; };
+		A35199991EFBC64E0001AEDD /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35199981EFBC64E0001AEDD /* UIView+Extension.swift */; };
 		A39FE5B21EF8B3DA00C53662 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39FE5B11EF8B3DA00C53662 /* AppDelegate.swift */; };
 		A39FE5B71EF8B3DA00C53662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A39FE5B51EF8B3DA00C53662 /* Main.storyboard */; };
 		A39FE5BA1EF8B3DA00C53662 /* ContactLLS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A39FE5B81EF8B3DA00C53662 /* ContactLLS.xcdatamodeld */; };
@@ -54,6 +59,11 @@
 		A33091ED1EFA68ED000D522F /* mock_contacts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mock_contacts.json; sourceTree = "<group>"; };
 		A35199881EFB55180001AEDD /* ContactModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactModelController.swift; path = ModelControllers/ContactModelController.swift; sourceTree = "<group>"; };
 		A351998C1EFB859B0001AEDD /* ModelCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelCellDelegate.swift; path = Utils/ModelCellDelegate.swift; sourceTree = "<group>"; };
+		A351998E1EFBAF990001AEDD /* ContactDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactDetailViewController.swift; path = ViewControllers/ContactDetailViewController.swift; sourceTree = "<group>"; };
+		A35199901EFBB2340001AEDD /* ContactDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactDetailHeaderView.swift; path = Views/ContactDetailHeaderView.swift; sourceTree = "<group>"; };
+		A35199941EFBB4DC0001AEDD /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Utils/BaseViewController.swift; sourceTree = "<group>"; };
+		A35199961EFBC4440001AEDD /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extension.swift"; path = "Utils/UIColor+Extension.swift"; sourceTree = "<group>"; };
+		A35199981EFBC64E0001AEDD /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extension.swift"; path = "Utils/UIView+Extension.swift"; sourceTree = "<group>"; };
 		A39FE5AE1EF8B3DA00C53662 /* ContactLLS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactLLS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A39FE5B11EF8B3DA00C53662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A39FE5B61EF8B3DA00C53662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -190,6 +200,9 @@
 				A39FE5EC1EF8B82D00C53662 /* String+Extension.swift */,
 				A39FE6001EF8C37700C53662 /* CellInterface.swift */,
 				A351998C1EFB859B0001AEDD /* ModelCellDelegate.swift */,
+				A35199941EFBB4DC0001AEDD /* BaseViewController.swift */,
+				A35199961EFBC4440001AEDD /* UIColor+Extension.swift */,
+				A35199981EFBC64E0001AEDD /* UIView+Extension.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -200,6 +213,7 @@
 				A39FE5F31EF8C27000C53662 /* ContactListSearchResultTableViewController.swift */,
 				A39FE5F41EF8C27000C53662 /* ContactListTableViewController.swift */,
 				A39FE5F51EF8C27000C53662 /* ContactListViewController.swift */,
+				A351998E1EFBAF990001AEDD /* ContactDetailViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -211,6 +225,7 @@
 				A39FE5FD1EF8C33900C53662 /* ContactListSearchResultTableViewCell.xib */,
 				A39FE6021EF8C66300C53662 /* ContactListTableViewCell.swift */,
 				A39FE6031EF8C66300C53662 /* ContactListTableViewCell.xib */,
+				A35199901EFBB2340001AEDD /* ContactDetailHeaderView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -444,11 +459,16 @@
 				A39FE5ED1EF8B82D00C53662 /* String+Extension.swift in Sources */,
 				A39FE6041EF8C66300C53662 /* ContactListTableViewCell.swift in Sources */,
 				A351998D1EFB859B0001AEDD /* ModelCellDelegate.swift in Sources */,
+				A35199911EFBB2340001AEDD /* ContactDetailHeaderView.swift in Sources */,
 				A39FE6091EF8C6CF00C53662 /* ContactModel.swift in Sources */,
+				A35199951EFBB4DC0001AEDD /* BaseViewController.swift in Sources */,
 				A39FE5FE1EF8C33900C53662 /* ContactListSearchResultTableViewCell.swift in Sources */,
+				A35199991EFBC64E0001AEDD /* UIView+Extension.swift in Sources */,
+				A35199971EFBC4440001AEDD /* UIColor+Extension.swift in Sources */,
 				A39FE5B21EF8B3DA00C53662 /* AppDelegate.swift in Sources */,
 				A39FE5BA1EF8B3DA00C53662 /* ContactLLS.xcdatamodeld in Sources */,
 				A35199891EFB55180001AEDD /* ContactModelController.swift in Sources */,
+				A351998F1EFBAF990001AEDD /* ContactDetailViewController.swift in Sources */,
 				A39FE5F71EF8C27000C53662 /* ContactListTableViewController.swift in Sources */,
 				A39FE5F61EF8C27000C53662 /* ContactListSearchResultTableViewController.swift in Sources */,
 				A39FE5F81EF8C27000C53662 /* ContactListViewController.swift in Sources */,
