@@ -17,6 +17,12 @@ class BaseViewController: UIViewController {
         return UIColor.lightGray
     }
     
+    var navigationBarHeight:CGFloat {
+        return navigationController?.navigationBar.bounds.height ?? 0
+    }
+    
+    var statusBarHeight = UIApplication.shared.statusBarFrame.height
+    
     convenience init() {
         
         self.init(nibName:nil, bundle:nil)

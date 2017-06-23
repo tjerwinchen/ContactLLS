@@ -37,4 +37,21 @@ extension UIView {
         newFrame.origin.y += dltY
         self.frame = newFrame
     }
+    
+    func moveVertically(_ dltY:CGFloat, minY:CGFloat, maxY:CGFloat) {
+        var newFrame = self.frame
+        newFrame.origin.y += dltY
+        newFrame.origin.y = min(newFrame.origin.y, maxY)
+        newFrame.origin.y = max(newFrame.origin.y, minY)
+        
+        print(newFrame.origin.y)
+        self.frame = newFrame
+    }
+    
+    func stratchVertically(_ dltY:CGFloat) {
+        var newFrame = self.frame
+        newFrame.origin.y += dltY
+        newFrame.size.height -= dltY
+        self.frame = newFrame
+    }
 }
