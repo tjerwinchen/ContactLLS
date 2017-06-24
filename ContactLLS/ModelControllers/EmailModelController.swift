@@ -8,13 +8,10 @@
 
 import UIKit
 
-class EmailModelController: NSObject {
+class EmailModelController: ModelController {
 
-    var model:EmailModel? = nil
-    
-    convenience init(model:EmailModel) {
-        self.init()
-        self.model = model
+    var model:EmailModel? {
+        return _model as? EmailModel
     }
     
     var type:String {

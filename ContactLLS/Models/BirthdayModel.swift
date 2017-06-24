@@ -1,5 +1,5 @@
 //
-//  EmailModel.swift
+//  BirthdayModel.swift
 //  ContactLLS
 //
 //  Created by Theo Chen on 6/24/17.
@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import EVReflection
 
-class EmailModel: Model {
+class BirthdayModel: Model {
     var type = ""
-    var emailAddress = ""
+    var birthday = ""
 }

@@ -8,19 +8,16 @@
 
 import UIKit
 
-class NameModelController:NSObject {
-    var model:NameModel? = nil
+class NameModelController:ModelController {
+    var model:NameModel? {
+        return _model as? NameModel
+    }
     
     var fullName:String {
         let firstName = model?.firstName ?? ""
         let lastName = model?.lastName ?? ""
         
         return "\(firstName) \(lastName)"
-    }
-    
-    convenience init(model:NameModel) {
-        self.init()
-        self.model = model
     }
 }
 
@@ -62,14 +59,38 @@ class ContactModelController: NSObject {
         let phoneModelList = model?.phoneList ?? []
         
         for phoneModel in phoneModelList {
-            let phoneModel = PhoneModelController(model: phoneModel)
-            mc.append(phoneModel)
+            let phoneModelCtrl = PhoneModelController(model: phoneModel)
+            mc.append(phoneModelCtrl)
         }
         
         return mc
     }
     
-    var emailList:[]
+    var emailList:[EmailModelController] {
+        var mc:[EmailModelController] = []
+        
+        let emailModelList = model?.emailList ?? []
+        
+        for emailModel in emailModelList {
+            let emailModelCrl = EmailModelController(model: emailModel)
+            mc.append(emailModelCrl)
+        }
+        
+        return mc
+    }
+    
+    var birthdayList:[BirthdayModelController] {
+        var mc:[BirthdayModelController] = []
+        
+        let birthdayModelList = model?.birthdayList ?? []
+        
+        for birthdayModel in birthdayModelList {
+            let birthdayModelCrl = BirthdayModelController(model: birthdayModel)
+            mc.append(birthdayModelCrl)
+        }
+        
+        return mc
+    }
     
     static func loadMockContact() -> [ContactModel] {
         
@@ -119,14 +140,21 @@ class ContactModelController: NSObject {
         self.model = model
     }
     
-    var informationList:[String] {
+    var informationNameList:[String] {
         
-        var _informationList:[String] = []
+        var _informationNameList:[String] = []
         
         if phoneList.count > 0 {
-            _informationList.append("phoneList")
+            _informationNameList.append("phoneList")
         }
-        if emailList
+        if emailList.count > 0 {
+            _informationNameList.append("emailList")
+        }
+        if birthdayList.count > 0 {
+            _informationNameList.append("birthdayList")
+        }
+        
+        return _informationNameList
     }
 }
 

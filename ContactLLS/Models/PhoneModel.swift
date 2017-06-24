@@ -9,7 +9,7 @@
 import UIKit
 import EVReflection
 
-class PhoneModel: EVObject {
+class PhoneModel: Model {
     var type = ""
     var countryCode = ""
     var phoneNumber = ""

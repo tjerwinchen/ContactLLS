@@ -9,11 +9,11 @@
 import UIKit
 import EVReflection
 
-class ContactModel: EVObject {
+class ContactModel: Model {
     
     var avatar = ""
     var name = NameModel()
     var emailList:[EmailModel]? = nil
     var phoneList:[PhoneModel]? = nil
-    var birthday = ""
+    var birthdayList:[BirthdayModel]? = nil
 }

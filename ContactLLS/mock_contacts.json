@@ -17,6 +17,26 @@
                 "type": "iphone"
             }
         ],
+        "emailList": [
+            {
+               "emailAddress": "tom.siver@icloud.com",
+               "type": "icloud"
+            },
+               {
+               "emailAddress": "tom.siver@apple.com",
+               "type": "office"
+            }
+        ],
+        "birthdayList": [
+            {
+               "birthday": "1984-01-12",
+               "type": "birthday"
+            },
+            {
+               "birthday": "1983-12-23",
+               "type": "chinese birthday"
+            }
+        ]
     },
     {
         "avatar":"mary",

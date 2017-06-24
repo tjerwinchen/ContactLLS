@@ -9,7 +9,7 @@
 import UIKit
 import EVReflection
 
-class NameModel: EVObject {
+class NameModel: Model {
     var firstName = ""
     var lastName = ""
 }

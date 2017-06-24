@@ -1,5 +1,5 @@
 //
-//  EmailModel.swift
+//  Model.swift
 //  ContactLLS
 //
 //  Created by Theo Chen on 6/24/17.
@@ -9,7 +9,6 @@
 import UIKit
 import EVReflection
 
-class EmailModel: Model {
-    var type = ""
-    var emailAddress = ""
+class Model: EVObject {
+
 }
