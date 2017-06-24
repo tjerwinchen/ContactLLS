@@ -8,9 +8,9 @@
 
 import UIKit
 
-protocol ModelCellDelegate:NSObjectProtocol {
+@objc protocol ModelCellDelegate:NSObjectProtocol {
     
-    func rendering(cell:UITableViewCell)
-    func rendering(view:UIView)
+    @objc optional func rendering(cell:UITableViewCell)
+    @objc optional func rendering(view:UIView)
 
 }

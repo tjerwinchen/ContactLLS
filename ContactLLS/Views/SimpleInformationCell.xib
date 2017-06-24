@@ -18,15 +18,30 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geb-M1-wT3">
-                        <rect key="frame" x="25" y="8" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geb-M1-wT3">
+                        <rect key="frame" x="16" y="4" width="35.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="de8-Av-YLr">
+                        <rect key="frame" x="16" y="23" width="35.5" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="geb-M1-wT3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="AFI-x6-Vtv"/>
+                    <constraint firstItem="geb-M1-wT3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="JmI-zE-xMK"/>
+                    <constraint firstItem="de8-Av-YLr" firstAttribute="top" secondItem="geb-M1-wT3" secondAttribute="bottom" constant="2" id="oWm-AE-UVR"/>
+                    <constraint firstItem="de8-Av-YLr" firstAttribute="leading" secondItem="geb-M1-wT3" secondAttribute="leading" id="q5y-bF-x0O"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="infoLabel" destination="de8-Av-YLr" id="jNi-wX-5zT"/>
+                <outlet property="typeLabel" destination="geb-M1-wT3" id="FyW-SB-LbQ"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

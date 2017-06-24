@@ -53,11 +53,21 @@ extension ContactDetailViewController:UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: SimpleInformationCell.id) as! SimpleInformationCell
+        
+        cell.modelDelegate = contactModelCtrl.phoneList[indexPath.row]
+        cell.rendering()
+        
+        // 最后一行
+        if indexPath.row == contactModelCtrl.phoneList.count - 1 {
+            cell.separatorInset = UIEdgeInsetsMake(0, 15, 0, 0)
+        }
+        
+        return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return contactModelCtrl.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

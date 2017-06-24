@@ -24,15 +24,6 @@ class NameModelController:NSObject {
     }
 }
 
-class PhoneModelController:NSObject {
-    var model:PhoneModel? = nil
-
-    convenience init(model:PhoneModel) {
-        self.init()
-        self.model = model
-    }
-}
-
 class ContactModelController: NSObject {
     
     var model:ContactModel? = nil
@@ -77,6 +68,8 @@ class ContactModelController: NSObject {
         
         return mc
     }
+    
+    var emailList:[]
     
     static func loadMockContact() -> [ContactModel] {
         
@@ -124,6 +117,16 @@ class ContactModelController: NSObject {
     convenience init(model:ContactModel) {
         self.init()
         self.model = model
+    }
+    
+    var informationList:[String] {
+        
+        var _informationList:[String] = []
+        
+        if phoneList.count > 0 {
+            _informationList.append("phoneList")
+        }
+        if emailList
     }
 }
 

@@ -9,22 +9,6 @@
 import UIKit
 import EVReflection
 
-class PhoneModel: EVObject {
-    var type = ""
-    var countryCode = ""
-    var phoneNumber = ""
-}
-
-class EmailModel: EVObject {
-    var emailAddress = ""
-}
-
-class NameModel: EVObject {
-    var firstName = ""
-    var lastName = ""
-}
-
-
 class ContactModel: EVObject {
     
     var avatar = ""

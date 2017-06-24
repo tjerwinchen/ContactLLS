@@ -94,6 +94,6 @@ class ContactDetailHeaderView: UIView {
     }
     
     func rendering() {
-        modelDelegate?.rendering(view: self)
+        modelDelegate?.rendering?(view: self)
     }
 }

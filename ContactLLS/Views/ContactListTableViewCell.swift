@@ -27,6 +27,6 @@ class ContactListTableViewCell: UITableViewCell, CellInterface {
     }
     
     func rendering() {
-        modelDelegate?.rendering(cell: self)
+        modelDelegate?.rendering?(cell: self)
     }
 }

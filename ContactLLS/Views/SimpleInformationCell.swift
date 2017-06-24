@@ -8,8 +8,13 @@
 
 import UIKit
 
-class SimpleInformationCell: UITableViewCell {
+class SimpleInformationCell: UITableViewCell, CellInterface {
+    
+    var modelDelegate:ModelCellDelegate? = nil
 
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var infoLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +26,7 @@ class SimpleInformationCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func rendering() {
+        modelDelegate?.rendering?(cell: self)
+    }
 }
