@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="17A264c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ContactDetailHeaderActionView" customModule="ContactLLS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="270"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJy-PT-byv">
+                    <rect key="frame" x="132" y="190" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="FIG-WD-8lk"/>
+                        <constraint firstAttribute="height" constant="44" id="bgT-96-oau"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="phone"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1S-cN-kEA">
+                    <rect key="frame" x="198" y="190" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="3zT-zT-DAj"/>
+                        <constraint firstAttribute="height" constant="44" id="zn4-hb-oZc"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="facetime"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgW-ZG-wLF">
+                    <rect key="frame" x="264" y="190" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="C9A-b8-dPL"/>
+                        <constraint firstAttribute="height" constant="44" id="PS7-PW-7DM"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="mail"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mpb-PB-U3J">
+                    <rect key="frame" x="66" y="190" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="Duv-Tu-Ejm"/>
+                        <constraint firstAttribute="height" constant="44" id="MVd-1p-pUc"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="message"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="as0-ar-NKk">
+                    <rect key="frame" x="63" y="238" width="51" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qls-fK-55h">
+                    <rect key="frame" x="144" y="238" width="21.5" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FaceTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8E-mI-QOk">
+                    <rect key="frame" x="193" y="238" width="54" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfl-9Z-INa">
+                    <rect key="frame" x="274.5" y="238" width="23.5" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Qls-fK-55h" firstAttribute="centerX" secondItem="VJy-PT-byv" secondAttribute="centerX" id="1cc-2G-3s0"/>
+                <constraint firstItem="VJy-PT-byv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="-33" id="7wi-LT-9iV"/>
+                <constraint firstItem="T1S-cN-kEA" firstAttribute="leading" secondItem="VJy-PT-byv" secondAttribute="trailing" constant="22" id="9G2-bl-JYx"/>
+                <constraint firstItem="T1S-cN-kEA" firstAttribute="centerY" secondItem="VJy-PT-byv" secondAttribute="centerY" id="FHE-GX-2yK"/>
+                <constraint firstAttribute="bottom" secondItem="VJy-PT-byv" secondAttribute="bottom" constant="36" id="K04-vm-bMD"/>
+                <constraint firstItem="IgW-ZG-wLF" firstAttribute="leading" secondItem="T1S-cN-kEA" secondAttribute="trailing" constant="22" id="LQL-1r-OST"/>
+                <constraint firstItem="IgW-ZG-wLF" firstAttribute="centerY" secondItem="T1S-cN-kEA" secondAttribute="centerY" id="LtR-xi-U6l"/>
+                <constraint firstItem="C8E-mI-QOk" firstAttribute="centerX" secondItem="T1S-cN-kEA" secondAttribute="centerX" id="Mm0-lY-Y9v"/>
+                <constraint firstItem="C8E-mI-QOk" firstAttribute="centerY" secondItem="Qls-fK-55h" secondAttribute="centerY" id="PpY-EF-APg"/>
+                <constraint firstItem="as0-ar-NKk" firstAttribute="centerX" secondItem="Mpb-PB-U3J" secondAttribute="centerX" id="Xca-cd-4S9"/>
+                <constraint firstItem="Mpb-PB-U3J" firstAttribute="centerY" secondItem="VJy-PT-byv" secondAttribute="centerY" id="bDP-MS-8Pj"/>
+                <constraint firstItem="wfl-9Z-INa" firstAttribute="centerX" secondItem="IgW-ZG-wLF" secondAttribute="centerX" id="fXL-Hs-7Ke"/>
+                <constraint firstItem="wfl-9Z-INa" firstAttribute="centerY" secondItem="C8E-mI-QOk" secondAttribute="centerY" id="gZU-N5-0PB"/>
+                <constraint firstItem="VJy-PT-byv" firstAttribute="leading" secondItem="Mpb-PB-U3J" secondAttribute="trailing" constant="22" id="iKR-f9-Wck"/>
+                <constraint firstItem="as0-ar-NKk" firstAttribute="top" secondItem="Mpb-PB-U3J" secondAttribute="bottom" constant="4" id="mnk-fL-siM"/>
+                <constraint firstItem="Qls-fK-55h" firstAttribute="centerY" secondItem="as0-ar-NKk" secondAttribute="centerY" id="pAB-vW-JEm"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="33.5" y="118"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="facetime" width="42" height="42"/>
+        <image name="mail" width="42" height="42"/>
+        <image name="message" width="42" height="42"/>
+        <image name="phone" width="42" height="42"/>
+    </resources>
+</document>

@@ -4,7 +4,19 @@
         "name": {
             "first_name": "Tom",
             "last_name": "Siver"
-        }
+        },
+        "phoneList": [
+            {
+                "countryCode": "+86",
+                "phoneNumber": "130 6627 8591",
+                "type": "mobile"
+            },
+            {
+                "countryCode": "+86",
+                "phoneNumber": "130 6627 8591",
+                "type": "iphone"
+            }
+        ],
     },
     {
         "avatar":"mary",

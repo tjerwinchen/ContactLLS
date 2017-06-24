@@ -11,4 +11,6 @@ import UIKit
 protocol ModelCellDelegate:NSObjectProtocol {
     
     func rendering(cell:UITableViewCell)
+    func rendering(view:UIView)
+
 }

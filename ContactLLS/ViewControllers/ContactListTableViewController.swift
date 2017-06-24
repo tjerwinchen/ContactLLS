@@ -105,7 +105,11 @@ class ContactListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        performSegue(withIdentifier: "showContactDetail", sender: self)
+        let key = sortedKeys[indexPath.section]
+        let contactList = contactDict[key] ?? []
+        
+        let contactModelCtrl = ContactModelController(model: contactList[indexPath.row])
+        performSegue(withIdentifier: "showContactDetail", sender: contactModelCtrl)
     }
     
     /*
@@ -146,11 +150,15 @@ class ContactListTableViewController: UITableViewController {
     // MARK: - Navigation
     
 
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if let vc = segue.destination as? ContactDetailViewController,
+            let contactModelCtrl = sender as? ContactModelController? {
+            vc.contactModelCtrl = contactModelCtrl
+        }
+    }
 }
 
 extension ContactListTableViewController: UISearchResultsUpdating {

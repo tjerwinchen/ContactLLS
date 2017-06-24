@@ -9,125 +9,34 @@
 import UIKit
 import SnapKit
 
-class ContactDetailTableView: UITableView {
-//    var touchesIsBegin = false
-//    var lastLocation = CGPoint(x: -999, y: -999)
-//    
-//    var controller:ContactDetailViewController? {
-//        return delegate as? ContactDetailViewController
-//    }
-//    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        super.touchesBegan(touches, with: event)
-//        
-//        touchesIsBegin = true
-//        
-//        if let touch = touches.first {
-//            lastLocation = touch.location(in: controller?.view)
-//        }
-//    }
-//    
-//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        super.touchesMoved(touches, with: event)
-//        
-//        if touchesIsBegin, let currentTouch = touches.first {
-//            
-//            //print("last:", self.lastLocation)
-//            //print("current:", currentTouch.location(in: view))
-//            
-//            let currenLocation = currentTouch.location(in: controller?.view)
-//            
-//            let stepY = (currenLocation.y - lastLocation.y) / 1.5
-//            
-//            controller?.scrollHeaderViewUpward(yStep: stepY)
-//            controller?.view.layoutIfNeeded()
-//            
-//            self.lastLocation = currenLocation
-//        }
-//    }
-//    
-//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        super.touchesEnded(touches, with: event)
-//        
-//        touchesIsBegin = false
-//    }
-//    
-//    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        super.touchesCancelled(touches, with: event)
-//        
-//        touchesIsBegin = false
-//    }
-//    
-//    var lastContentOffset = CGPoint(x: 999, y: 999)
-}
-
 class ContactDetailViewController: BaseViewController {
 
-    @IBOutlet weak var tableView: ContactDetailTableView!
-    @IBOutlet weak var headerView: ContactDetailHeaderView!
+    @IBOutlet weak var tableView: UITableView!
     
-    override var entitlementBackgroundColor:UIColor {
-        get {
-            return UIColor.red
-        }
-    }
+    var headerView = ContactDetailHeaderView()
     
+    var contactModelCtrl: ContactModelController! = nil
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         bNeedTransparentNavigationBar = true
         
-        //tableView.isScrollEnabled = false
+        let headerView = ContactDetailHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 200))
+        headerView.awakeFromNib()
+        headerView.modelDelegate = contactModelCtrl
+        headerView.rendering()
         
-        placeHeaderView(yPosition: 0.0)
+        tableView.tableHeaderView = headerView
+        tableView.backgroundColor = UIColor(R: 250, G: 250, B: 255)
+        tableView.register(SimpleInformationCell.cellNib, forCellReuseIdentifier: SimpleInformationCell.id)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func scrollHeaderViewUpward(yStep:CGFloat) {
-        var yPosition = headerView.frame.origin.y + yStep
-        
-        if yPosition > 0 {
-            yPosition = 0
-        }
-        else if yPosition < -100 {
-            yPosition = -100
-        }
-        
-        placeHeaderView(yPosition: yPosition)
-        
-        print(yPosition)
-        
-//        if yPosition == -100 { // 到底段了
-//            tableView.isScrollEnabled = true
-//        }
-//        else {
-//            tableView.isScrollEnabled = false
-//        }
-    }
-    
-    func placeHeaderView(yPosition:CGFloat) {
-        headerView.snp.remakeConstraints { [unowned self] (headerViewMake) in
-            headerViewMake.top.equalTo(self.view.snp.top).offset(yPosition)
-            headerViewMake.left.equalTo(self.view.snp.left)
-            headerViewMake.right.equalTo(self.view.snp.right)
-            headerViewMake.height.equalTo(300)
-        }
-        
-        let offsetHeight = self.navigationBarHeight + self.statusBarHeight
-        
-        tableView.snp.remakeConstraints { [unowned self, offsetHeight] (tableViewMake) in
-            tableViewMake.top.equalTo(self.headerView.snp.bottom).offset(-offsetHeight)
-            tableViewMake.left.equalTo(self.view.snp.left)
-            tableViewMake.right.equalTo(self.view.snp.right)
-            tableViewMake.bottom.equalTo(self.view.snp.bottom)
-        }
-    }
-    
 
     /*
     // MARK: - Navigation
@@ -138,53 +47,6 @@ class ContactDetailViewController: BaseViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    var touchesIsBegin = false
-    var lastLocation = CGPoint(x: -999, y: -999)
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-
-        touchesIsBegin = true
-        
-        if let touch = touches.first {
-            lastLocation = touch.location(in: self.view)
-        }
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesMoved(touches, with: event)
-
-        if touchesIsBegin, let currentTouch = touches.first {
-            
-            //print("last:", self.lastLocation)
-            //print("current:", currentTouch.location(in: view))
-
-            let currenLocation = currentTouch.location(in: view)
-            
-            let stepY = (currenLocation.y - lastLocation.y) / 1.5
-            
-            scrollHeaderViewUpward(yStep: stepY)
-            view.layoutIfNeeded()
-        
-            self.lastLocation = currenLocation
-        }
-    }
-
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-
-        touchesIsBegin = false
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesCancelled(touches, with: event)
-        
-        touchesIsBegin = false
-    }
-    
-    var lastContentOffset = CGPoint(x: 999, y: 999)
-
 }
 
 extension ContactDetailViewController:UITableViewDelegate, UITableViewDataSource {
@@ -199,7 +61,7 @@ extension ContactDetailViewController:UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return contactModelCtrl.phoneList.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -210,26 +72,35 @@ extension ContactDetailViewController:UITableViewDelegate, UITableViewDataSource
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        lastContentOffset = scrollView.contentOffset
+    var headerOffset:CGFloat {
+        return 100.0 - statusBarHeight - navigationBarHeight
     }
     
-    func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
-        
+    var barOffset:CGFloat {
+        return statusBarHeight+navigationBarHeight
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let currentContentOffset = scrollView.contentOffset
         
-        let stepY = (currentContentOffset.y - lastContentOffset.y)
         
-        scrollHeaderViewUpward(yStep: -stepY)
-        view.layoutIfNeeded()
+        //print(currentContentOffset.y)
+
+//        if currentContentOffset.y > headerOffset {
+//            scrollView.contentOffset.y = headerOffset
+//            
+//            headerView.awakeFromNib()
+//        }
         
-        lastContentOffset = currentContentOffset
-    }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if currentContentOffset.y < -barOffset*2 {
+            scrollView.contentOffset.y = -barOffset*2
+        }
         
+        else {
+            if let headerView = self.tableView.tableHeaderView as? ContactDetailHeaderView {
+                
+                headerView.updateLayout(offsetY:currentContentOffset.y)
+            }
+        }
     }
 }

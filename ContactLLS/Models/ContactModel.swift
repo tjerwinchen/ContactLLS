@@ -10,6 +10,7 @@ import UIKit
 import EVReflection
 
 class PhoneModel: EVObject {
+    var type = ""
     var countryCode = ""
     var phoneNumber = ""
 }

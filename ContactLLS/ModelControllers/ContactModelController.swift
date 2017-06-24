@@ -24,6 +24,15 @@ class NameModelController:NSObject {
     }
 }
 
+class PhoneModelController:NSObject {
+    var model:PhoneModel? = nil
+
+    convenience init(model:PhoneModel) {
+        self.init()
+        self.model = model
+    }
+}
+
 class ContactModelController: NSObject {
     
     var model:ContactModel? = nil
@@ -54,6 +63,19 @@ class ContactModelController: NSObject {
             return UIFont.boldSystemFont(ofSize: 17.0)
         }
         return UIFont.systemFont(ofSize: 17.0)
+    }
+    
+    var phoneList:[PhoneModelController] {
+        var mc:[PhoneModelController] = []
+        
+        let phoneModelList = model?.phoneList ?? []
+        
+        for phoneModel in phoneModelList {
+            let phoneModel = PhoneModelController(model: phoneModel)
+            mc.append(phoneModel)
+        }
+        
+        return mc
     }
     
     static func loadMockContact() -> [ContactModel] {
@@ -114,6 +136,12 @@ extension ContactModelController:ModelCellDelegate {
             
             thisCell.firstNameLabel.font = firstNameLabelFont
             thisCell.lastNameLabel.font = lastNameLabelFont
+        }
+    }
+    
+    func rendering(view: UIView) {
+        if let thisView = view as? ContactDetailHeaderView {
+            thisView.nameLabel.text = fullName
         }
     }
 }
