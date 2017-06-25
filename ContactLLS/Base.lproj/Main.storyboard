@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17A264c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="B07-JX-Grb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17A291j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="B07-JX-Grb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,6 +9,51 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Contact Detail Edit View Controller-->
+        <scene sceneID="WaL-8k-o9Y">
+            <objects>
+                <viewController id="eKV-X6-Cnu" customClass="ContactDetailEditViewController" customModule="ContactLLS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mDa-ZM-bvZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="NmW-Me-ryT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R0X-95-heH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dOe-XZ-2Ue">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="eKV-X6-Cnu" id="01P-Kk-hjc"/>
+                                    <outlet property="delegate" destination="eKV-X6-Cnu" id="oAP-SN-ONb"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dOe-XZ-2Ue" firstAttribute="top" secondItem="R0X-95-heH" secondAttribute="top" id="IVr-mo-8Fp"/>
+                            <constraint firstItem="NmW-Me-ryT" firstAttribute="top" secondItem="dOe-XZ-2Ue" secondAttribute="bottom" id="OJj-np-59e"/>
+                            <constraint firstAttribute="trailing" secondItem="dOe-XZ-2Ue" secondAttribute="trailing" id="OKm-ly-4kH"/>
+                            <constraint firstItem="dOe-XZ-2Ue" firstAttribute="leading" secondItem="R0X-95-heH" secondAttribute="leading" id="XWj-5W-Z63"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BE7-hq-QcL">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mFx-HB-xVg">
+                            <connections>
+                                <action selector="cancelBtnTouched:" destination="eKV-X6-Cnu" id="zjh-aC-bIR"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="TJL-av-Rh0"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="dOe-XZ-2Ue" id="6dz-21-8P8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iTl-ir-E4g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2812" y="-579.76011994002999"/>
+        </scene>
         <!--Contact List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -37,7 +82,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5uy-VO-HlD">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lwL-xs-2QY"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lwL-xs-2QY">
+                            <connections>
+                                <segue destination="aiX-ro-EJD" kind="presentation" id="cAv-2R-HHb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="yev-Ih-4Og" id="4ad-LB-pDu"/>
@@ -95,7 +144,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1818" y="139"/>
+            <point key="canvasLocation" x="1873" y="139"/>
         </scene>
         <!--Contact Detail View Controller-->
         <scene sceneID="O6e-KH-O0N">
@@ -170,6 +219,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="szH-qq-qp9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="314" y="139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AFx-fa-KgO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aiX-ro-EJD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4QU-eo-CXB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eKV-X6-Cnu" kind="relationship" relationship="rootViewController" id="P7q-bQ-n5R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jLj-9h-89f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1872.8" y="-580.65967016491754"/>
         </scene>
     </scenes>
 </document>

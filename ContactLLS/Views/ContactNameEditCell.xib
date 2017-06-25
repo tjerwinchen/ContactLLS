@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="17A291j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="165" id="KGk-i7-Jjw" customClass="ContactNameEditCell" customModule="ContactLLS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="165"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="164.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sLU-si-HEg" customClass="BottomLineView" customModule="ContactLLS" customModuleProvider="target">
+                        <rect key="frame" x="79" y="109.5" width="241" height="55"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7fB-Wr-ViS">
+                        <rect key="frame" x="17" y="16" width="48" height="48"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="48" id="6A7-9m-EcL"/>
+                            <constraint firstAttribute="height" constant="48" id="daH-hh-Zdk"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dX-iV-Cj9">
+                        <rect key="frame" x="26" y="70" width="30" height="30"/>
+                        <state key="normal" title="edit"/>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uc0-70-jVX" customClass="BottomLineView" customModule="ContactLLS" customModuleProvider="target">
+                        <rect key="frame" x="79" y="0.0" width="241" height="55.5"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U4A-wd-XaW">
+                                <rect key="frame" x="15" y="2" width="211" height="51.5"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="U4A-wd-XaW" firstAttribute="leading" secondItem="Uc0-70-jVX" secondAttribute="leading" constant="15" id="8PA-SG-DVE"/>
+                            <constraint firstAttribute="trailing" secondItem="U4A-wd-XaW" secondAttribute="trailing" constant="15" id="GsZ-8V-MQE"/>
+                            <constraint firstItem="U4A-wd-XaW" firstAttribute="top" secondItem="Uc0-70-jVX" secondAttribute="top" constant="2" id="ynp-gn-WYh"/>
+                            <constraint firstAttribute="bottom" secondItem="U4A-wd-XaW" secondAttribute="bottom" constant="2" id="z9V-wG-R5Y"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mmr-If-txX" customClass="BottomLineView" customModule="ContactLLS" customModuleProvider="target">
+                        <rect key="frame" x="79" y="55" width="241" height="55"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="sLU-si-HEg" firstAttribute="leading" secondItem="Mmr-If-txX" secondAttribute="leading" id="0ST-kH-wUD"/>
+                    <constraint firstItem="sLU-si-HEg" firstAttribute="top" secondItem="Mmr-If-txX" secondAttribute="bottom" id="1iM-8o-feG"/>
+                    <constraint firstAttribute="bottom" secondItem="sLU-si-HEg" secondAttribute="bottom" id="2R7-xE-4tO"/>
+                    <constraint firstItem="Mmr-If-txX" firstAttribute="height" secondItem="Uc0-70-jVX" secondAttribute="height" id="3sn-cj-NiP"/>
+                    <constraint firstItem="sLU-si-HEg" firstAttribute="height" secondItem="Uc0-70-jVX" secondAttribute="height" id="42x-hi-574"/>
+                    <constraint firstItem="Uc0-70-jVX" firstAttribute="leading" secondItem="7fB-Wr-ViS" secondAttribute="trailing" constant="15" id="CD3-wK-yJn"/>
+                    <constraint firstAttribute="trailing" secondItem="Mmr-If-txX" secondAttribute="trailing" id="Dsr-R5-cdG"/>
+                    <constraint firstItem="4dX-iV-Cj9" firstAttribute="centerX" secondItem="7fB-Wr-ViS" secondAttribute="centerX" id="EQi-mb-wjQ"/>
+                    <constraint firstAttribute="trailing" secondItem="Uc0-70-jVX" secondAttribute="trailing" id="Gzy-a7-eNP"/>
+                    <constraint firstAttribute="trailing" secondItem="sLU-si-HEg" secondAttribute="trailing" id="SJU-hF-cSU"/>
+                    <constraint firstItem="Mmr-If-txX" firstAttribute="leading" secondItem="Uc0-70-jVX" secondAttribute="leading" id="g5h-uP-A5W"/>
+                    <constraint firstItem="Uc0-70-jVX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="l9T-M8-otN"/>
+                    <constraint firstItem="7fB-Wr-ViS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="mt5-CC-8ta"/>
+                    <constraint firstItem="4dX-iV-Cj9" firstAttribute="top" secondItem="7fB-Wr-ViS" secondAttribute="bottom" constant="6" id="qbm-Fq-ymr"/>
+                    <constraint firstItem="7fB-Wr-ViS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="qq8-Hq-qP6"/>
+                    <constraint firstItem="Mmr-If-txX" firstAttribute="top" secondItem="Uc0-70-jVX" secondAttribute="bottom" id="rx9-p8-AhM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="49" y="111"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -48,6 +48,13 @@
 		A39FE6041EF8C66300C53662 /* ContactListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39FE6021EF8C66300C53662 /* ContactListTableViewCell.swift */; };
 		A39FE6051EF8C66300C53662 /* ContactListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A39FE6031EF8C66300C53662 /* ContactListTableViewCell.xib */; };
 		A39FE6091EF8C6CF00C53662 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39FE6081EF8C6CF00C53662 /* ContactModel.swift */; };
+		A3F9AE491EFEC39400E05D3E /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F9AE481EFEC39400E05D3E /* Date+Extension.swift */; };
+		A3F9AE4B1EFEC92800E05D3E /* ContactDetailEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F9AE4A1EFEC92800E05D3E /* ContactDetailEditViewController.swift */; };
+		A3F9AE4D1EFECCCD00E05D3E /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F9AE4C1EFECCCD00E05D3E /* UIButton+Extension.swift */; };
+		A3F9AE501EFED4E100E05D3E /* ContactNameEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F9AE4E1EFED4E100E05D3E /* ContactNameEditCell.swift */; };
+		A3F9AE511EFED4E100E05D3E /* ContactNameEditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3F9AE4F1EFED4E100E05D3E /* ContactNameEditCell.xib */; };
+		A3F9AE531EFF80D600E05D3E /* ContactDetailEditHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F9AE521EFF80D600E05D3E /* ContactDetailEditHeaderView.swift */; };
+		A3F9AE551EFF80F200E05D3E /* ContactDetailEditHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3F9AE541EFF80F200E05D3E /* ContactDetailEditHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +124,13 @@
 		A39FE6021EF8C66300C53662 /* ContactListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactListTableViewCell.swift; path = Views/ContactListTableViewCell.swift; sourceTree = "<group>"; };
 		A39FE6031EF8C66300C53662 /* ContactListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactListTableViewCell.xib; path = Views/ContactListTableViewCell.xib; sourceTree = "<group>"; };
 		A39FE6081EF8C6CF00C53662 /* ContactModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactModel.swift; path = Models/ContactModel.swift; sourceTree = "<group>"; };
+		A3F9AE481EFEC39400E05D3E /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Extension.swift"; path = "Utils/Date+Extension.swift"; sourceTree = "<group>"; };
+		A3F9AE4A1EFEC92800E05D3E /* ContactDetailEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactDetailEditViewController.swift; path = ViewControllers/ContactDetailEditViewController.swift; sourceTree = "<group>"; };
+		A3F9AE4C1EFECCCD00E05D3E /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Extension.swift"; path = "Utils/UIButton+Extension.swift"; sourceTree = "<group>"; };
+		A3F9AE4E1EFED4E100E05D3E /* ContactNameEditCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactNameEditCell.swift; path = Views/ContactNameEditCell.swift; sourceTree = "<group>"; };
+		A3F9AE4F1EFED4E100E05D3E /* ContactNameEditCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactNameEditCell.xib; path = Views/ContactNameEditCell.xib; sourceTree = "<group>"; };
+		A3F9AE521EFF80D600E05D3E /* ContactDetailEditHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactDetailEditHeaderView.swift; path = Views/ContactDetailEditHeaderView.swift; sourceTree = "<group>"; };
+		A3F9AE541EFF80F200E05D3E /* ContactDetailEditHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactDetailEditHeaderView.xib; path = Views/ContactDetailEditHeaderView.xib; sourceTree = "<group>"; };
 		E72B37841F91612B5448E16D /* Pods-ContactLLS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactLLS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContactLLS/Pods-ContactLLS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +185,8 @@
 				A39FE6031EF8C66300C53662 /* ContactListTableViewCell.xib */,
 				A385D89E1EFE4C3B00F5859A /* SimpleInformationCell.swift */,
 				A385D89F1EFE4C3B00F5859A /* SimpleInformationCell.xib */,
+				A3F9AE4E1EFED4E100E05D3E /* ContactNameEditCell.swift */,
+				A3F9AE4F1EFED4E100E05D3E /* ContactNameEditCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -243,8 +259,10 @@
 				A351998C1EFB859B0001AEDD /* ModelCellDelegate.swift */,
 				A35199941EFBB4DC0001AEDD /* BaseViewController.swift */,
 				A35199961EFBC4440001AEDD /* UIColor+Extension.swift */,
-				A35199981EFBC64E0001AEDD /* UIView+Extension.swift */,
 				A31593491EFD6DB800D6CF39 /* UIImage+Extension.swift */,
+				A3F9AE481EFEC39400E05D3E /* Date+Extension.swift */,
+				A3F9AE4C1EFECCCD00E05D3E /* UIButton+Extension.swift */,
+				A35199981EFBC64E0001AEDD /* UIView+Extension.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -256,6 +274,7 @@
 				A39FE5F41EF8C27000C53662 /* ContactListTableViewController.swift */,
 				A39FE5F51EF8C27000C53662 /* ContactListViewController.swift */,
 				A351998E1EFBAF990001AEDD /* ContactDetailViewController.swift */,
+				A3F9AE4A1EFEC92800E05D3E /* ContactDetailEditViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -267,6 +286,8 @@
 				A35199901EFBB2340001AEDD /* ContactDetailHeaderView.swift */,
 				A385D8991EFE428F00F5859A /* ContactDetailHeaderActionView.swift */,
 				A385D89B1EFE42AA00F5859A /* ContactDetailHeaderActionView.xib */,
+				A3F9AE521EFF80D600E05D3E /* ContactDetailEditHeaderView.swift */,
+				A3F9AE541EFF80F200E05D3E /* ContactDetailEditHeaderView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -429,11 +450,13 @@
 			files = (
 				A39FE6051EF8C66300C53662 /* ContactListTableViewCell.xib in Resources */,
 				A385D89C1EFE42AA00F5859A /* ContactDetailHeaderActionView.xib in Resources */,
+				A3F9AE551EFF80F200E05D3E /* ContactDetailEditHeaderView.xib in Resources */,
 				A39FE5BF1EF8B3DA00C53662 /* LaunchScreen.storyboard in Resources */,
 				A33091EE1EFA68ED000D522F /* mock_contacts.json in Resources */,
 				A39FE5E41EF8B5E700C53662 /* Localizable.strings in Resources */,
 				A39FE5BC1EF8B3DA00C53662 /* Assets.xcassets in Resources */,
 				A385D8A11EFE4C3B00F5859A /* SimpleInformationCell.xib in Resources */,
+				A3F9AE511EFED4E100E05D3E /* ContactNameEditCell.xib in Resources */,
 				A39FE5FF1EF8C33900C53662 /* ContactListSearchResultTableViewCell.xib in Resources */,
 				A39FE5B71EF8B3DA00C53662 /* Main.storyboard in Resources */,
 			);
@@ -513,6 +536,8 @@
 				A39FE5ED1EF8B82D00C53662 /* String+Extension.swift in Sources */,
 				A39FE6041EF8C66300C53662 /* ContactListTableViewCell.swift in Sources */,
 				A351998D1EFB859B0001AEDD /* ModelCellDelegate.swift in Sources */,
+				A3F9AE501EFED4E100E05D3E /* ContactNameEditCell.swift in Sources */,
+				A3F9AE491EFEC39400E05D3E /* Date+Extension.swift in Sources */,
 				A385D8A51EFE63E800F5859A /* PhoneModel.swift in Sources */,
 				A385D8AD1EFE890600F5859A /* ModelController.swift in Sources */,
 				A315934A1EFD6DB800D6CF39 /* UIImage+Extension.swift in Sources */,
@@ -528,6 +553,7 @@
 				A385D8A71EFE640500F5859A /* NameModel.swift in Sources */,
 				A39FE5B21EF8B3DA00C53662 /* AppDelegate.swift in Sources */,
 				A39FE5BA1EF8B3DA00C53662 /* ContactLLS.xcdatamodeld in Sources */,
+				A3F9AE4D1EFECCCD00E05D3E /* UIButton+Extension.swift in Sources */,
 				A35199891EFB55180001AEDD /* ContactModelController.swift in Sources */,
 				A351998F1EFBAF990001AEDD /* ContactDetailViewController.swift in Sources */,
 				A39FE5F71EF8C27000C53662 /* ContactListTableViewController.swift in Sources */,
@@ -535,8 +561,10 @@
 				A385D8A91EFE642300F5859A /* EmailModel.swift in Sources */,
 				A39FE5F81EF8C27000C53662 /* ContactListViewController.swift in Sources */,
 				A385D8A01EFE4C3B00F5859A /* SimpleInformationCell.swift in Sources */,
+				A3F9AE4B1EFEC92800E05D3E /* ContactDetailEditViewController.swift in Sources */,
 				A385D8B11EFE8C1700F5859A /* BirthdayModel.swift in Sources */,
 				A39FE6011EF8C37700C53662 /* CellInterface.swift in Sources */,
+				A3F9AE531EFF80D600E05D3E /* ContactDetailEditHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

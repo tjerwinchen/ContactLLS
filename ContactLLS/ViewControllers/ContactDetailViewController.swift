@@ -32,6 +32,7 @@ class ContactDetailViewController: BaseViewController {
         tableView.tableHeaderView = headerView
         tableView.backgroundColor = UIColor(R: 250, G: 250, B: 255)
         tableView.register(SimpleInformationCell.cellNib, forCellReuseIdentifier: SimpleInformationCell.id)
+        tableView.tableFooterView = UIView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,7 +91,7 @@ extension ContactDetailViewController:UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
+        return 55
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
