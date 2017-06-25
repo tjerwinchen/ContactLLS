@@ -122,7 +122,7 @@ extension ContactDetailEditViewController:UITableViewDelegate, UITableViewDataSo
             let key = contactModelCtrl.informationNameForEditList[indexPath.section]
             cell.titleLabel.text = ["phoneList": "ADD_PHONE",
                                     "emailList": "ADD_EMAIL",
-                                    "birthdayList": "AddBirthday",
+                                    "birthdayList": "ADD_BIRTHDAY",
                                     ][key]?.localized
             
             return cell

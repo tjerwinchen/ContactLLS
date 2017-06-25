@@ -14,3 +14,5 @@ ADD_PHONE = "add phone";
 ADD_EMAIL = "add email";
 ADD_BIRTHDAY = "add birthday";
 PHONE = "Phone";
+EMAIL = "Email";
+BIRTHDAY = "Birthday";

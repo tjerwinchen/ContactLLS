@@ -14,3 +14,5 @@ ADD_PHONE = "添加电话号码";
 ADD_EMAIL = "添加电子邮箱";
 ADD_BIRTHDAY = "添加生日";
 PHONE = "电话";
+EMAIL = "电子邮箱";
+BIRTHDAY = "生日";

@@ -29,6 +29,8 @@ class BirthdayModelController: ModelController {
     var birthdayReadable:String {
         return birthdayDate?.toString(dateFormat: "MMMM d, YYYY") ?? ""
     }
+    
+    lazy var datePicker = UIDatePicker()
 }
 
 extension BirthdayModelController:ModelCellDelegate {
@@ -39,6 +41,15 @@ extension BirthdayModelController:ModelCellDelegate {
             thisCell.infoLabel.text = birthdayReadable
             thisCell.infoLabel.textColor = UIColor(R: 21, G: 126, B: 251)
             thisCell.separatorInset = UIEdgeInsets(top: 0, left: 1000, bottom: 0, right: 0)
+        }
+        else if let thisCell = cell as? SimpleInformationEditCell {
+            thisCell.typeBtn.setTitle(type, for: .normal)
+            
+            datePicker.datePickerMode = .date
+            
+            thisCell.infoTextField.inputView = datePicker
+            thisCell.infoTextField.placeholder = "BIRTHDAY".localized
+            thisCell.infoTextField.text = birthdayReadable
         }
     }
 }

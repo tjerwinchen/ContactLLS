@@ -20,14 +20,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rx2-oU-RLX" customClass="RightLineView" customModule="ContactLLS" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="4" width="80" height="38.5"/>
+                        <rect key="frame" x="0.0" y="4" width="96" height="38.5"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYy-OS-NLm">
-                                <rect key="frame" x="4" y="2" width="52" height="34.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYy-OS-NLm">
+                                <rect key="frame" x="4" y="2" width="68" height="34.5"/>
                                 <state key="normal" title="Button"/>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="ouJ-fW-89P">
-                                <rect key="frame" x="60" y="11.5" width="8" height="14"/>
+                                <rect key="frame" x="76" y="11.5" width="8" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="RdN-O4-9kA"/>
                                     <constraint firstAttribute="width" constant="8" id="aRA-ay-rd1"/>
@@ -45,7 +45,7 @@
                         </constraints>
                     </view>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Placeholder" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1Rp-Wz-cyQ">
-                        <rect key="frame" x="95" y="7" width="210" height="33"/>
+                        <rect key="frame" x="111" y="7" width="194" height="33"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="33" id="aBx-Wn-6sO"/>
                         </constraints>
@@ -56,7 +56,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="rx2-oU-RLX" secondAttribute="bottom" constant="1" id="Deb-hA-gXk"/>
-                    <constraint firstItem="rx2-oU-RLX" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.25" id="NVo-Jm-fRk"/>
+                    <constraint firstItem="rx2-oU-RLX" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.3" id="NVo-Jm-fRk"/>
                     <constraint firstItem="rx2-oU-RLX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="NwK-XA-CnL"/>
                     <constraint firstAttribute="trailing" secondItem="1Rp-Wz-cyQ" secondAttribute="trailing" constant="15" id="eAZ-Wv-0P3"/>
                     <constraint firstItem="1Rp-Wz-cyQ" firstAttribute="centerY" secondItem="kYy-OS-NLm" secondAttribute="centerY" id="hkM-Lf-L48"/>

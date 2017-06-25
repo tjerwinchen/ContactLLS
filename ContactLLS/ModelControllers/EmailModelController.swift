@@ -33,8 +33,13 @@ extension EmailModelController:ModelCellDelegate {
             thisCell.infoLabel.text = fullEmail
             thisCell.infoLabel.textColor = UIColor(R: 21, G: 126, B: 251)
             thisCell.separatorInset = UIEdgeInsets(top: 0, left: 1000, bottom: 0, right: 0)
+        }
+        else if let thisCell = cell as? SimpleInformationEditCell {
+            thisCell.typeBtn.setTitle(type, for: .normal)
             
-            
+            thisCell.infoTextField.keyboardType = .emailAddress
+            thisCell.infoTextField.placeholder = "EMAIL".localized
+            thisCell.infoTextField.text = fullEmail
         }
     }
 }
