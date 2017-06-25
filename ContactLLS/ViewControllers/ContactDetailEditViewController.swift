@@ -12,6 +12,9 @@ class ContactDetailEditViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var status:ContactEditStatus = .add
+    let imgPicker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,9 +22,20 @@ class ContactDetailEditViewController: UIViewController {
         title = "NEW_CONTACT".localized
         
         navigationBarDidLoad()
-        tableView.tableHeaderView = Bundle.main.loadNibNamed("ContactDetailEditHeaderView", owner: self, options: nil)![0] as! ContactDetailEditHeaderView
+        tableViewDidLoad()
         
-        tableView.register(ContactNameEditCell.cellNib, forCellReuseIdentifier: ContactNameEditCell.id)
+        imgPicker.delegate = self
+    }
+    
+    func tableViewDidLoad() {
+        let contactDetailEditHeaderView = Bundle.main.loadNibNamed("ContactDetailEditHeaderView", owner: self, options: nil)![0] as! ContactDetailEditHeaderView
+        
+        contactDetailEditHeaderView.delegate = self
+        contactDetailEditHeaderView.status = .add
+        tableView.tableHeaderView = contactDetailEditHeaderView
+        
+        // register cell
+        tableView.register(SimpleInformationAddCell.cellNib, forCellReuseIdentifier: SimpleInformationAddCell.id)
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,11 +75,12 @@ extension ContactDetailEditViewController:UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ContactNameEditCell.id, for:indexPath)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: SimpleInformationAddCell.id, for: indexPath)
         
         return cell
     }
@@ -75,6 +90,86 @@ extension ContactDetailEditViewController:UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 165
+        return 44
     }
 }
+
+extension ContactDetailEditViewController:
+    ContactDetailEditHeaderViewDelegate,
+    UIImagePickerControllerDelegate,
+    UINavigationControllerDelegate {
+    func addPhoto(headerView: ContactDetailEditHeaderView) {
+       
+        // 1
+        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        // 2
+        let cameraAction = UIAlertAction(title: "Take a photo", style: .default) { (alert) in
+            
+            self.imgPicker.allowsEditing = false
+            self.imgPicker.sourceType = UIImagePickerControllerSourceType.camera
+            self.imgPicker.cameraCaptureMode = .photo
+            
+            self.present(self.imgPicker, animated: true, completion: nil)
+        }
+        
+        let photoLibraryAction = UIAlertAction(title: "CHOOSE_PHOTO".localized, style: .default) { (alert) -> Void in
+            
+            self.imgPicker.allowsEditing = false //2
+            self.imgPicker.sourceType = .photoLibrary //3
+            self.imgPicker.modalPresentationStyle = .popover
+            
+            self.present(self.imgPicker, animated: true, completion: nil)
+        }
+        
+        //
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (alert) in
+        }
+        
+        // 4
+        if UIImagePickerController.isCameraDeviceAvailable(.rear) || UIImagePickerController.isCameraDeviceAvailable(.front) {
+            optionMenu.addAction(cameraAction)
+        }
+        optionMenu.addAction(photoLibraryAction)
+        optionMenu.addAction(cancelAction)
+        
+        present(optionMenu, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        // 开始弹出image cropper view controller
+        picker.dismiss(animated: true) { [unowned self] in
+            // present the cropper view controller
+            let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+            let imgCropperVC = VPImageCropperViewController(image: image, cropFrame: CGRect(x: 0, y: 100.0, width: self.view.frame.size.width, height: self.view.frame.size.width), limitScaleRatio: 3)
+            imgCropperVC?.delegate = self
+            self.present(imgCropperVC!, animated: true) { (complete) in
+                
+            }
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+extension ContactDetailEditViewController: VPImageCropperDelegate {
+    
+    func imageCropper(_ cropperViewController: VPImageCropperViewController!, didFinished editedImage: UIImage!) {
+        
+        if let headerView = tableView.tableHeaderView as? ContactDetailEditHeaderView {
+            
+            let avatar = editedImage.scale(toSize: CGSize(width: 256, height: 256))
+            headerView.imgView.image = avatar.withRenderingMode(.alwaysOriginal)
+            
+            status = .edit
+            headerView.status = status
+        }
+    }
+    
+    func imageCropperDidCancel(_ cropperViewController: VPImageCropperViewController!) {
+    }
+}
+

@@ -73,13 +73,17 @@
                         <constraint firstAttribute="trailing" secondItem="tM6-Xp-8YB" secondAttribute="trailing" constant="15" id="Fmm-Nj-9Yg"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_contact" translatesAutoresizingMaskIntoConstraints="NO" id="EbG-XY-JGR">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EbG-XY-JGR">
                     <rect key="frame" x="16" y="16" width="48" height="48"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="48" id="A0T-9A-2Fn"/>
                         <constraint firstAttribute="height" constant="48" id="WUN-0Z-5K5"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwD-4J-SxC">
+                    <rect key="frame" x="17" y="25" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -87,6 +91,7 @@
                 <constraint firstItem="EbG-XY-JGR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="9Pc-K7-nHQ"/>
                 <constraint firstItem="qJC-tN-Iao" firstAttribute="leading" secondItem="EbG-XY-JGR" secondAttribute="trailing" constant="15" id="BDQ-UF-v92"/>
                 <constraint firstItem="6BC-Pf-Mx2" firstAttribute="leading" secondItem="cLa-xk-ZbU" secondAttribute="leading" id="EaK-fL-Dws"/>
+                <constraint firstItem="XwD-4J-SxC" firstAttribute="centerX" secondItem="EbG-XY-JGR" secondAttribute="centerX" id="Ejq-cp-Inc"/>
                 <constraint firstItem="cLa-xk-ZbU" firstAttribute="leading" secondItem="qJC-tN-Iao" secondAttribute="leading" id="F9A-kJ-rkW"/>
                 <constraint firstItem="6BC-Pf-Mx2" firstAttribute="top" secondItem="cLa-xk-ZbU" secondAttribute="bottom" id="PVR-It-AwY"/>
                 <constraint firstItem="vnO-2W-cMu" firstAttribute="centerX" secondItem="EbG-XY-JGR" secondAttribute="centerX" id="b5V-AW-zPZ"/>
@@ -95,16 +100,22 @@
                 <constraint firstAttribute="trailing" secondItem="cLa-xk-ZbU" secondAttribute="trailing" id="dVn-lM-n0R"/>
                 <constraint firstAttribute="bottom" secondItem="6BC-Pf-Mx2" secondAttribute="bottom" id="dZ3-ob-Hy9"/>
                 <constraint firstItem="cLa-xk-ZbU" firstAttribute="height" secondItem="qJC-tN-Iao" secondAttribute="height" id="gnK-gg-vQV"/>
+                <constraint firstItem="XwD-4J-SxC" firstAttribute="centerY" secondItem="EbG-XY-JGR" secondAttribute="centerY" id="iJJ-tb-f7v"/>
                 <constraint firstItem="cLa-xk-ZbU" firstAttribute="top" secondItem="qJC-tN-Iao" secondAttribute="bottom" id="mdf-JO-pcL"/>
                 <constraint firstItem="EbG-XY-JGR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="oVT-lD-67f"/>
                 <constraint firstItem="vnO-2W-cMu" firstAttribute="top" secondItem="EbG-XY-JGR" secondAttribute="bottom" constant="6" id="q68-2v-7xA"/>
                 <constraint firstItem="qJC-tN-Iao" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="sRY-Cl-7Wx"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="addBtn" destination="XwD-4J-SxC" id="lVl-te-YRA"/>
+                <outlet property="editBtn" destination="vnO-2W-cMu" id="jwK-OY-UVu"/>
+                <outlet property="imgView" destination="EbG-XY-JGR" id="xOq-L9-FvQ"/>
+                <outletCollection property="nameTextFieldList" destination="tM6-Xp-8YB" collectionClass="NSMutableArray" id="gci-BH-yIJ"/>
+                <outletCollection property="nameTextFieldList" destination="sWC-i5-764" collectionClass="NSMutableArray" id="ffn-nJ-hCl"/>
+                <outletCollection property="nameTextFieldList" destination="iBv-Qo-dsc" collectionClass="NSMutableArray" id="9Hp-51-Nkb"/>
+            </connections>
             <point key="canvasLocation" x="40" y="-159"/>
         </view>
     </objects>
-    <resources>
-        <image name="default_contact" width="170" height="170"/>
-    </resources>
 </document>

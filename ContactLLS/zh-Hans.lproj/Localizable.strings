@@ -8,3 +8,5 @@
 
 CONTACTS = "联系人";
 NEW_CONTACT = "新建联系人";
+ADD_PHOTO = "新照片";
+CHOOSE_PHOTO = "选择照片";
