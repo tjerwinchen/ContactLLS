@@ -57,7 +57,7 @@ extension ContactDetailViewController:UITableViewDelegate, UITableViewDataSource
         
         let cell = tableView.dequeueReusableCell(withIdentifier: SimpleInformationCell.id) as! SimpleInformationCell
         
-        let informationName = contactModelCtrl.informationNameList[indexPath.section]
+        let informationName = contactModelCtrl.informationNameForViewList[indexPath.section]
         if let modelCtrlList = contactModelCtrl.value(forKey: informationName) as? [ModelController] {
             
             if let modelCtrl = modelCtrlList[indexPath.row] as? ModelCellDelegate {
@@ -77,12 +77,12 @@ extension ContactDetailViewController:UITableViewDelegate, UITableViewDataSource
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return contactModelCtrl.informationNameList.count
+        return contactModelCtrl.informationNameForViewList.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        let informationName = contactModelCtrl.informationNameList[section]
+        let informationName = contactModelCtrl.informationNameForViewList[section]
         if let list = contactModelCtrl.value(forKey: informationName) as? [ModelController] {
             return list.count
         }
@@ -97,7 +97,7 @@ extension ContactDetailViewController:UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let informationName = contactModelCtrl.informationNameList[indexPath.section]
+        let informationName = contactModelCtrl.informationNameForViewList[indexPath.section]
         if let modelCtrlList = contactModelCtrl.value(forKey: informationName) as? [ModelController] {
             
             if let modelCtrl = modelCtrlList[indexPath.row] as? PhoneModelController {

@@ -1,5 +1,5 @@
 //
-//  SimpleInformationAddCell.swift
+//  SimpleInformationEditCell.swift
 //  ContactLLS
 //
 //  Created by Theo Chen on 6/25/17.
@@ -8,10 +8,8 @@
 
 import UIKit
 
-class SimpleInformationAddCell: UITableViewCell, CellInterface {
+class SimpleInformationEditCell: UITableViewCell {
 
-    @IBOutlet weak var imgView: UIImageView!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

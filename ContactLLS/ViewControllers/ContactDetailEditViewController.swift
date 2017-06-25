@@ -8,9 +8,20 @@
 
 import UIKit
 
+class BlankCell:UITableViewCell, CellInterface {
+    
+    override func draw(_ rect: CGRect) {
+        contentView.backgroundColor = UIColor.white
+        separatorInset = UIEdgeInsets(top: 0, left: 1000, bottom: 0, right: 0)
+        selectionStyle = .none
+    }
+}
+
 class ContactDetailEditViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var contactModelCtrl = ContactModelController(model: ContactModel())
     
     var status:ContactEditStatus = .add
     let imgPicker = UIImagePickerController()
@@ -36,6 +47,7 @@ class ContactDetailEditViewController: UIViewController {
         
         // register cell
         tableView.register(SimpleInformationAddCell.cellNib, forCellReuseIdentifier: SimpleInformationAddCell.id)
+        tableView.register(BlankCell.self, forCellReuseIdentifier: BlankCell.id)
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,18 +83,26 @@ class ContactDetailEditViewController: UIViewController {
 extension ContactDetailEditViewController:UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return contactModelCtrl.informationNameForEditList.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: SimpleInformationAddCell.id, for: indexPath)
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: BlankCell.id, for: indexPath)
+            
+            return cell
+        }
+        if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: SimpleInformationAddCell.id, for: indexPath)
+            return cell
+        }
         
-        return cell
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

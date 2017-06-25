@@ -140,21 +140,26 @@ class ContactModelController: NSObject {
         self.model = model
     }
     
-    var informationNameList:[String] {
+    var informationNameForViewList:[String] {
         
-        var _informationNameList:[String] = []
+        var _keyList:[String] = []
         
         if phoneList.count > 0 {
-            _informationNameList.append("phoneList")
+            _keyList.append("phoneList")
         }
         if emailList.count > 0 {
-            _informationNameList.append("emailList")
+            _keyList.append("emailList")
         }
         if birthdayList.count > 0 {
-            _informationNameList.append("birthdayList")
+            _keyList.append("birthdayList")
         }
         
-        return _informationNameList
+        return _keyList
+    }
+    
+    var informationNameForEditList:[String] {
+        
+        return ["ADD_PHONE", "ADD_EMAIL", "ADD_BIRTHDAY"]
     }
 }
 

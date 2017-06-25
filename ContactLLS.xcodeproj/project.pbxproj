@@ -20,6 +20,8 @@
 		A35199951EFBB4DC0001AEDD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35199941EFBB4DC0001AEDD /* BaseViewController.swift */; };
 		A35199971EFBC4440001AEDD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35199961EFBC4440001AEDD /* UIColor+Extension.swift */; };
 		A35199991EFBC64E0001AEDD /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35199981EFBC64E0001AEDD /* UIView+Extension.swift */; };
+		A351CC211EFFC4DA00D4F1BF /* SimpleInformationEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A351CC1F1EFFC4DA00D4F1BF /* SimpleInformationEditCell.swift */; };
+		A351CC221EFFC4DA00D4F1BF /* SimpleInformationEditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A351CC201EFFC4DA00D4F1BF /* SimpleInformationEditCell.xib */; };
 		A385D89A1EFE428F00F5859A /* ContactDetailHeaderActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385D8991EFE428F00F5859A /* ContactDetailHeaderActionView.swift */; };
 		A385D89C1EFE42AA00F5859A /* ContactDetailHeaderActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A385D89B1EFE42AA00F5859A /* ContactDetailHeaderActionView.xib */; };
 		A385D8A01EFE4C3B00F5859A /* SimpleInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385D89E1EFE4C3B00F5859A /* SimpleInformationCell.swift */; };
@@ -92,6 +94,8 @@
 		A35199941EFBB4DC0001AEDD /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Utils/BaseViewController.swift; sourceTree = "<group>"; };
 		A35199961EFBC4440001AEDD /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extension.swift"; path = "Utils/UIColor+Extension.swift"; sourceTree = "<group>"; };
 		A35199981EFBC64E0001AEDD /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extension.swift"; path = "Utils/UIView+Extension.swift"; sourceTree = "<group>"; };
+		A351CC1F1EFFC4DA00D4F1BF /* SimpleInformationEditCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimpleInformationEditCell.swift; path = Views/SimpleInformationEditCell.swift; sourceTree = "<group>"; };
+		A351CC201EFFC4DA00D4F1BF /* SimpleInformationEditCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SimpleInformationEditCell.xib; path = Views/SimpleInformationEditCell.xib; sourceTree = "<group>"; };
 		A385D8991EFE428F00F5859A /* ContactDetailHeaderActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactDetailHeaderActionView.swift; path = Views/ContactDetailHeaderActionView.swift; sourceTree = "<group>"; };
 		A385D89B1EFE42AA00F5859A /* ContactDetailHeaderActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactDetailHeaderActionView.xib; path = Views/ContactDetailHeaderActionView.xib; sourceTree = "<group>"; };
 		A385D89E1EFE4C3B00F5859A /* SimpleInformationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimpleInformationCell.swift; path = Views/SimpleInformationCell.swift; sourceTree = "<group>"; };
@@ -201,6 +205,8 @@
 				A385D89F1EFE4C3B00F5859A /* SimpleInformationCell.xib */,
 				A32861401EFFA14000319769 /* SimpleInformationAddCell.swift */,
 				A32861411EFFA14000319769 /* SimpleInformationAddCell.xib */,
+				A351CC1F1EFFC4DA00D4F1BF /* SimpleInformationEditCell.swift */,
+				A351CC201EFFC4DA00D4F1BF /* SimpleInformationEditCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -467,6 +473,7 @@
 				A385D89C1EFE42AA00F5859A /* ContactDetailHeaderActionView.xib in Resources */,
 				A3F9AE551EFF80F200E05D3E /* ContactDetailEditHeaderView.xib in Resources */,
 				A39FE5BF1EF8B3DA00C53662 /* LaunchScreen.storyboard in Resources */,
+				A351CC221EFFC4DA00D4F1BF /* SimpleInformationEditCell.xib in Resources */,
 				A33091EE1EFA68ED000D522F /* mock_contacts.json in Resources */,
 				A39FE5E41EF8B5E700C53662 /* Localizable.strings in Resources */,
 				A39FE5BC1EF8B3DA00C53662 /* Assets.xcassets in Resources */,
@@ -546,6 +553,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A351CC211EFFC4DA00D4F1BF /* SimpleInformationEditCell.swift in Sources */,
 				A32861421EFFA14000319769 /* SimpleInformationAddCell.swift in Sources */,
 				A328613B1EFF993D00319769 /* VPImageCropperViewController.m in Sources */,
 				A385D8AF1EFE899900F5859A /* Model.swift in Sources */,

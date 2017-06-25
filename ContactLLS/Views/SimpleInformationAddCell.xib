@@ -24,7 +24,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rL7-Ty-6wD">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="rL7-Ty-6wD">
                         <rect key="frame" x="12" y="11" width="22" height="22"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="22" id="5Ul-ku-eLK"/>
@@ -44,4 +44,7 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="add" width="85" height="85"/>
+    </resources>
 </document>
