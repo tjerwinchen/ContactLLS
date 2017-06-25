@@ -92,6 +92,27 @@ class ContactModelController: NSObject {
         return mc
     }
     
+    func appendPhone(phoneModel:PhoneModel) {
+        if model?.phoneList == nil {
+            model?.phoneList = []
+        }
+        model?.phoneList?.append(phoneModel)
+    }
+    
+    func appendEmail(emailModel:EmailModel) {
+        if model?.emailList == nil {
+            model?.emailList = []
+        }
+        model?.emailList?.append(emailModel)
+    }
+    
+    func appendBirthday(birthdayModel:BirthdayModel) {
+        if model?.birthdayList == nil {
+            model?.birthdayList = []
+        }
+        model?.birthdayList?.append(birthdayModel)
+    }
+    
     static func loadMockContact() -> [ContactModel] {
         
         var contactModelList:[ContactModel] = []
@@ -159,7 +180,7 @@ class ContactModelController: NSObject {
     
     var informationNameForEditList:[String] {
         
-        return ["ADD_PHONE", "ADD_EMAIL", "ADD_BIRTHDAY"]
+        return ["phoneList", "emailList", "birthdayList"]
     }
 }
 

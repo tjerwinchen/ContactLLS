@@ -28,7 +28,7 @@ class ContactDetailEditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         title = "NEW_CONTACT".localized
         
@@ -44,12 +44,15 @@ class ContactDetailEditViewController: UIViewController {
         contactDetailEditHeaderView.delegate = self
         contactDetailEditHeaderView.status = .add
         tableView.tableHeaderView = contactDetailEditHeaderView
+        tableView.setEditing(true, animated: true)
+        tableView.allowsSelectionDuringEditing = true
         
         // register cell
         tableView.register(SimpleInformationAddCell.cellNib, forCellReuseIdentifier: SimpleInformationAddCell.id)
         tableView.register(BlankCell.self, forCellReuseIdentifier: BlankCell.id)
+        tableView.register(SimpleInformationEditCell.cellNib, forCellReuseIdentifier: SimpleInformationEditCell.id)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -59,22 +62,21 @@ class ContactDetailEditViewController: UIViewController {
         // Remove black bottom line in navigation bar
         navigationController?.navigationBar.setBackgroundImage(UIImage.image(withColor: UIColor.white, size: CGSize(width: UIScreen.main.bounds.width, height: 66)), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
-
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
     @IBAction func cancelBtnTouched(_ sender: Any) {
-        dismiss(animated: true) { 
+        dismiss(animated: true) {
             
         }
     }
@@ -87,7 +89,24 @@ extension ContactDetailEditViewController:UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let modelCtrlList = contactModelCtrl.value(forKey: contactModelCtrl.informationNameForEditList[section]) as? [ModelController] {
+            
+            return 2+modelCtrlList.count
+        }
+        
         return 2
+    }
+    
+    // Override to support conditional editing of the table view.
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        if indexPath.row == 0 {
+            return false
+        }
+        else if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
+            return false
+        }
+        return true
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -97,16 +116,61 @@ extension ContactDetailEditViewController:UITableViewDelegate, UITableViewDataSo
             
             return cell
         }
-        if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: SimpleInformationAddCell.id, for: indexPath)
+        else if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: SimpleInformationAddCell.id, for: indexPath) as! SimpleInformationAddCell
+            
+            let key = contactModelCtrl.informationNameForEditList[indexPath.section]
+            cell.titleLabel.text = ["phoneList": "ADD_PHONE",
+                                    "emailList": "ADD_EMAIL",
+                                    "birthdayList": "AddBirthday",
+                                    ][key]?.localized
+            
             return cell
         }
-        
-        return UITableViewCell()
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: SimpleInformationEditCell.id, for: indexPath) as! SimpleInformationEditCell
+            
+            let key = contactModelCtrl.informationNameForEditList[indexPath.section]
+            
+            if let modelCtrlList = contactModelCtrl.value(forKey: key) as? [ModelController] {
+                
+                if let modelCtrl = modelCtrlList[indexPath.row-1] as? ModelCellDelegate {
+                    
+                    cell.modelDelegate = modelCtrl
+                }
+            }
+            
+            cell.rendering()
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        // 点击的是最后一行cell,即增加一条信息
+        if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
+            
+            let key = contactModelCtrl.informationNameForEditList[indexPath.section]
+            
+            switch(key) {
+            case "phoneList":
+                let phoneModel = PhoneModel()
+                phoneModel.type = "Home"
+                contactModelCtrl.appendPhone(phoneModel:phoneModel)
+            case "emailList":
+                let emailModel = EmailModel()
+                emailModel.type = "Home"
+                contactModelCtrl.appendEmail(emailModel:emailModel)
+            case "birthdayList":
+                let birthdayModel = BirthdayModel()
+                birthdayModel.type = "birthday"
+                contactModelCtrl.appendBirthday(birthdayModel:birthdayModel)
+            default:
+                break
+            }
+            tableView.reloadSections([indexPath.section], with: .automatic)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -117,9 +181,9 @@ extension ContactDetailEditViewController:UITableViewDelegate, UITableViewDataSo
 extension ContactDetailEditViewController:
     ContactDetailEditHeaderViewDelegate,
     UIImagePickerControllerDelegate,
-    UINavigationControllerDelegate {
+UINavigationControllerDelegate {
     func addPhoto(headerView: ContactDetailEditHeaderView) {
-       
+        
         // 1
         let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         

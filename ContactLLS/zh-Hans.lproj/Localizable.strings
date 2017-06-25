@@ -10,3 +10,7 @@ CONTACTS = "联系人";
 NEW_CONTACT = "新建联系人";
 ADD_PHOTO = "新照片";
 CHOOSE_PHOTO = "选择照片";
+ADD_PHONE = "添加电话号码";
+ADD_EMAIL = "添加电子邮箱";
+ADD_BIRTHDAY = "添加生日";
+PHONE = "电话";

@@ -43,7 +43,13 @@
         "name": {
             "first_name": "Mary",
             "last_name": "Rockefeller"
-        }
+        },
+        "emailList": [
+            {
+               "emailAddress": "mary.rockefeller@icloud.com",
+               "type": "icloud"
+            }
+        ],
     },
     {
         "avatar":"mary",

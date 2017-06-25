@@ -57,8 +57,8 @@ extension ContactDetailViewController:UITableViewDelegate, UITableViewDataSource
         
         let cell = tableView.dequeueReusableCell(withIdentifier: SimpleInformationCell.id) as! SimpleInformationCell
         
-        let informationName = contactModelCtrl.informationNameForViewList[indexPath.section]
-        if let modelCtrlList = contactModelCtrl.value(forKey: informationName) as? [ModelController] {
+        let key = contactModelCtrl.informationNameForViewList[indexPath.section]
+        if let modelCtrlList = contactModelCtrl.value(forKey: key) as? [ModelController] {
             
             if let modelCtrl = modelCtrlList[indexPath.row] as? ModelCellDelegate {
                 

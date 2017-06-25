@@ -13,6 +13,8 @@
 		A32861421EFFA14000319769 /* SimpleInformationAddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32861401EFFA14000319769 /* SimpleInformationAddCell.swift */; };
 		A32861431EFFA14000319769 /* SimpleInformationAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A32861411EFFA14000319769 /* SimpleInformationAddCell.xib */; };
 		A33091EE1EFA68ED000D522F /* mock_contacts.json in Resources */ = {isa = PBXBuildFile; fileRef = A33091ED1EFA68ED000D522F /* mock_contacts.json */; };
+		A3325CD71F000A8A0072E986 /* BottomLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3325CD61F000A8A0072E986 /* BottomLineView.swift */; };
+		A3325CD91F000AAD0072E986 /* RightLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3325CD81F000AAD0072E986 /* RightLineView.swift */; };
 		A35199891EFB55180001AEDD /* ContactModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35199881EFB55180001AEDD /* ContactModelController.swift */; };
 		A351998D1EFB859B0001AEDD /* ModelCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A351998C1EFB859B0001AEDD /* ModelCellDelegate.swift */; };
 		A351998F1EFBAF990001AEDD /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A351998E1EFBAF990001AEDD /* ContactDetailViewController.swift */; };
@@ -87,6 +89,8 @@
 		A32861401EFFA14000319769 /* SimpleInformationAddCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimpleInformationAddCell.swift; path = Views/SimpleInformationAddCell.swift; sourceTree = "<group>"; };
 		A32861411EFFA14000319769 /* SimpleInformationAddCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SimpleInformationAddCell.xib; path = Views/SimpleInformationAddCell.xib; sourceTree = "<group>"; };
 		A33091ED1EFA68ED000D522F /* mock_contacts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mock_contacts.json; sourceTree = "<group>"; };
+		A3325CD61F000A8A0072E986 /* BottomLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BottomLineView.swift; path = Views/BottomLineView.swift; sourceTree = "<group>"; };
+		A3325CD81F000AAD0072E986 /* RightLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RightLineView.swift; path = Views/RightLineView.swift; sourceTree = "<group>"; };
 		A35199881EFB55180001AEDD /* ContactModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactModelController.swift; path = ModelControllers/ContactModelController.swift; sourceTree = "<group>"; };
 		A351998C1EFB859B0001AEDD /* ModelCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelCellDelegate.swift; path = Utils/ModelCellDelegate.swift; sourceTree = "<group>"; };
 		A351998E1EFBAF990001AEDD /* ContactDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactDetailViewController.swift; path = ViewControllers/ContactDetailViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +196,15 @@
 				A32861381EFF993D00319769 /* VPImageCropper */,
 			);
 			name = 3rdPart;
+			sourceTree = "<group>";
+		};
+		A3325CD51F000A6E0072E986 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A3325CD61F000A8A0072E986 /* BottomLineView.swift */,
+				A3325CD81F000AAD0072E986 /* RightLineView.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		A385D89D1EFE4BEA00F5859A /* Cells */ = {
@@ -303,6 +316,7 @@
 		A39FE5F91EF8C28300C53662 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A3325CD51F000A6E0072E986 /* Utils */,
 				A385D89D1EFE4BEA00F5859A /* Cells */,
 				A35199901EFBB2340001AEDD /* ContactDetailHeaderView.swift */,
 				A385D8991EFE428F00F5859A /* ContactDetailHeaderActionView.swift */,
@@ -582,11 +596,13 @@
 				A351998F1EFBAF990001AEDD /* ContactDetailViewController.swift in Sources */,
 				A39FE5F71EF8C27000C53662 /* ContactListTableViewController.swift in Sources */,
 				A39FE5F61EF8C27000C53662 /* ContactListSearchResultTableViewController.swift in Sources */,
+				A3325CD91F000AAD0072E986 /* RightLineView.swift in Sources */,
 				A385D8A91EFE642300F5859A /* EmailModel.swift in Sources */,
 				A39FE5F81EF8C27000C53662 /* ContactListViewController.swift in Sources */,
 				A385D8A01EFE4C3B00F5859A /* SimpleInformationCell.swift in Sources */,
 				A3F9AE4B1EFEC92800E05D3E /* ContactDetailEditViewController.swift in Sources */,
 				A385D8B11EFE8C1700F5859A /* BirthdayModel.swift in Sources */,
+				A3325CD71F000A8A0072E986 /* BottomLineView.swift in Sources */,
 				A39FE6011EF8C37700C53662 /* CellInterface.swift in Sources */,
 				A3F9AE531EFF80D600E05D3E /* ContactDetailEditHeaderView.swift in Sources */,
 			);

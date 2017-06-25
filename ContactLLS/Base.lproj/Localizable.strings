@@ -10,3 +10,7 @@ CONTACTS = "Contacts";
 NEW_CONTACT = "New Contact";
 ADD_PHOTO = "add\nphoto";
 CHOOSE_PHOTO = "Choose Photo";
+ADD_PHONE = "add phone";
+ADD_EMAIL = "add email";
+ADD_BIRTHDAY = "add birthday";
+PHONE = "Phone";

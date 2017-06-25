@@ -19,24 +19,6 @@
                     <rect key="frame" x="25" y="70" width="30" height="30"/>
                     <state key="normal" title="edit"/>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLa-xk-ZbU" customClass="BottomLineView" customModule="ContactLLS" customModuleProvider="target">
-                    <rect key="frame" x="79" y="55" width="296" height="55.5"/>
-                    <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWC-i5-764">
-                            <rect key="frame" x="15" y="2" width="266" height="51.5"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="bottom" secondItem="sWC-i5-764" secondAttribute="bottom" constant="2" id="HS7-9e-DtW"/>
-                        <constraint firstAttribute="trailing" secondItem="sWC-i5-764" secondAttribute="trailing" constant="15" id="TIA-u2-Qa4"/>
-                        <constraint firstItem="sWC-i5-764" firstAttribute="top" secondItem="cLa-xk-ZbU" secondAttribute="top" constant="2" id="q8W-dk-Z8O"/>
-                        <constraint firstItem="sWC-i5-764" firstAttribute="leading" secondItem="cLa-xk-ZbU" secondAttribute="leading" constant="15" id="sDW-DE-dk2"/>
-                    </constraints>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6BC-Pf-Mx2" customClass="BottomLineView" customModule="ContactLLS" customModuleProvider="target">
                     <rect key="frame" x="79" y="110.5" width="296" height="54.5"/>
                     <subviews>
@@ -84,6 +66,24 @@
                     <rect key="frame" x="17" y="25" width="46" height="30"/>
                     <state key="normal" title="Button"/>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLa-xk-ZbU" customClass="BottomLineView" customModule="ContactLLS" customModuleProvider="target">
+                    <rect key="frame" x="79" y="55" width="296" height="55.5"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWC-i5-764">
+                            <rect key="frame" x="15" y="2" width="266" height="51.5"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="sWC-i5-764" secondAttribute="bottom" constant="2" id="HS7-9e-DtW"/>
+                        <constraint firstAttribute="trailing" secondItem="sWC-i5-764" secondAttribute="trailing" constant="15" id="TIA-u2-Qa4"/>
+                        <constraint firstItem="sWC-i5-764" firstAttribute="top" secondItem="cLa-xk-ZbU" secondAttribute="top" constant="2" id="q8W-dk-Z8O"/>
+                        <constraint firstItem="sWC-i5-764" firstAttribute="leading" secondItem="cLa-xk-ZbU" secondAttribute="leading" constant="15" id="sDW-DE-dk2"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>

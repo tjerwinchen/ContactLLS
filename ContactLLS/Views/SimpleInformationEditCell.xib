@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,13 +19,58 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egp-7A-wiV">
-                        <rect key="frame" x="84" y="8" width="46" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button"/>
-                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rx2-oU-RLX" customClass="RightLineView" customModule="ContactLLS" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="4" width="80" height="38.5"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYy-OS-NLm">
+                                <rect key="frame" x="4" y="2" width="52" height="34.5"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="ouJ-fW-89P">
+                                <rect key="frame" x="60" y="11.5" width="8" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14" id="RdN-O4-9kA"/>
+                                    <constraint firstAttribute="width" constant="8" id="aRA-ay-rd1"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ouJ-fW-89P" firstAttribute="leading" secondItem="kYy-OS-NLm" secondAttribute="trailing" constant="4" id="3dx-Da-Jzc"/>
+                            <constraint firstAttribute="bottom" secondItem="kYy-OS-NLm" secondAttribute="bottom" constant="2" id="8Fc-YL-rKI"/>
+                            <constraint firstItem="kYy-OS-NLm" firstAttribute="top" secondItem="rx2-oU-RLX" secondAttribute="top" constant="2" id="K5S-fN-Slg"/>
+                            <constraint firstItem="ouJ-fW-89P" firstAttribute="centerY" secondItem="rx2-oU-RLX" secondAttribute="centerY" id="eFH-cZ-Npk"/>
+                            <constraint firstItem="kYy-OS-NLm" firstAttribute="leading" secondItem="rx2-oU-RLX" secondAttribute="leading" constant="4" id="nLj-05-VHX"/>
+                            <constraint firstAttribute="trailing" secondItem="ouJ-fW-89P" secondAttribute="trailing" constant="12" id="r7w-0S-z2c"/>
+                        </constraints>
+                    </view>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Placeholder" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1Rp-Wz-cyQ">
+                        <rect key="frame" x="95" y="7" width="210" height="33"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="33" id="aBx-Wn-6sO"/>
+                        </constraints>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="rx2-oU-RLX" secondAttribute="bottom" constant="1" id="Deb-hA-gXk"/>
+                    <constraint firstItem="rx2-oU-RLX" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.25" id="NVo-Jm-fRk"/>
+                    <constraint firstItem="rx2-oU-RLX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="NwK-XA-CnL"/>
+                    <constraint firstAttribute="trailing" secondItem="1Rp-Wz-cyQ" secondAttribute="trailing" constant="15" id="eAZ-Wv-0P3"/>
+                    <constraint firstItem="1Rp-Wz-cyQ" firstAttribute="centerY" secondItem="kYy-OS-NLm" secondAttribute="centerY" id="hkM-Lf-L48"/>
+                    <constraint firstItem="rx2-oU-RLX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="k2Y-PB-CwK"/>
+                    <constraint firstItem="1Rp-Wz-cyQ" firstAttribute="leading" secondItem="rx2-oU-RLX" secondAttribute="trailing" constant="15" id="uxc-iB-0VW"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="infoTextField" destination="1Rp-Wz-cyQ" id="YG2-Kb-q0v"/>
+                <outlet property="typeBtn" destination="kYy-OS-NLm" id="PkD-z7-4V4"/>
+            </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="right_arrow" width="12" height="20"/>
+    </resources>
 </document>

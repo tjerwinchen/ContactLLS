@@ -41,6 +41,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="imgView" destination="rL7-Ty-6wD" id="WIZ-PV-FaS"/>
+                <outlet property="titleLabel" destination="PF0-U3-T74" id="QsA-5J-ihN"/>
             </connections>
         </tableViewCell>
     </objects>

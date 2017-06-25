@@ -13,18 +13,6 @@ enum ContactEditStatus:String {
     case edit = "EDIT"
 }
 
-class BottomLineView:UIView {
-    
-    override func draw(_ rect: CGRect) {
-        
-        let bottomBorderlayer = CALayer()
-        bottomBorderlayer.frame = CGRect(x: 0, y: self.bounds.height-1.0, width: self.bounds.width, height: 0.5)
-        bottomBorderlayer.backgroundColor = UIColor.lightGray.cgColor
-        
-        layer.addSublayer(bottomBorderlayer)
-    }
-}
-
 protocol ContactDetailEditHeaderViewDelegate:NSObjectProtocol {
     
     func addPhoto(headerView: ContactDetailEditHeaderView)

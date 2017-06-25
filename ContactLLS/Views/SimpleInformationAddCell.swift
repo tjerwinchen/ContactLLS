@@ -11,6 +11,7 @@ import UIKit
 class SimpleInformationAddCell: UITableViewCell, CellInterface {
 
     @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
