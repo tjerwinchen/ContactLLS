@@ -46,6 +46,7 @@ class ContactDetailEditViewController: UIViewController {
         tableView.tableHeaderView = contactDetailEditHeaderView
         tableView.setEditing(true, animated: true)
         tableView.allowsSelectionDuringEditing = true
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 300)) // delete later
         
         // register cell
         tableView.register(SimpleInformationAddCell.cellNib, forCellReuseIdentifier: SimpleInformationAddCell.id)

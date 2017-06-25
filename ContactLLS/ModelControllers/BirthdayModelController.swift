@@ -31,6 +31,8 @@ class BirthdayModelController: ModelController {
     }
     
     lazy var datePicker = UIDatePicker()
+    
+    var cell:UITableViewCell? = nil
 }
 
 extension BirthdayModelController:ModelCellDelegate {
@@ -43,13 +45,26 @@ extension BirthdayModelController:ModelCellDelegate {
             thisCell.separatorInset = UIEdgeInsets(top: 0, left: 1000, bottom: 0, right: 0)
         }
         else if let thisCell = cell as? SimpleInformationEditCell {
+            self.cell = thisCell
+            
             thisCell.typeBtn.setTitle(type, for: .normal)
             
             datePicker.datePickerMode = .date
+            datePicker.locale = Locale.current
+            datePicker.addTarget(self, action: #selector(BirthdayModelController.datePickerValueChanged(sender:)), for: .valueChanged)
             
             thisCell.infoTextField.inputView = datePicker
             thisCell.infoTextField.placeholder = "BIRTHDAY".localized
             thisCell.infoTextField.text = birthdayReadable
         }
     }
+    
+    func datePickerValueChanged(sender:Any) {
+        model?.birthday = datePicker.date.toString(dateFormat: "YYYY-MM-dd")
+
+        if let thisCell = cell as? SimpleInformationEditCell {
+            thisCell.infoTextField.text = birthdayReadable
+        }
+    }
 }
+
