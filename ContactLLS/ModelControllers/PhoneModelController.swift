@@ -38,8 +38,17 @@ extension PhoneModelController:ModelCellDelegate {
             thisCell.typeBtn.setTitle(type, for: .normal)
             
             thisCell.infoTextField.keyboardType = .phonePad
+            thisCell.infoTextField.delegate = self
             thisCell.infoTextField.placeholder = "PHONE".localized
             thisCell.infoTextField.text = fullNumber
         }
+    }
+}
+
+extension PhoneModelController:UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+     
+        self.model?.phoneNumber = textField.text ?? ""
     }
 }

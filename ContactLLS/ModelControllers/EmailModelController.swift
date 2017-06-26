@@ -38,8 +38,17 @@ extension EmailModelController:ModelCellDelegate {
             thisCell.typeBtn.setTitle(type, for: .normal)
             
             thisCell.infoTextField.keyboardType = .emailAddress
+            thisCell.infoTextField.delegate = self
             thisCell.infoTextField.placeholder = "EMAIL".localized
             thisCell.infoTextField.text = fullEmail
         }
+    }
+}
+
+extension EmailModelController:UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+        
+        self.model?.emailAddress = textField.text ?? ""
     }
 }

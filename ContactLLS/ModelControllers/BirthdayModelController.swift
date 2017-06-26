@@ -54,6 +54,7 @@ extension BirthdayModelController:ModelCellDelegate {
             datePicker.addTarget(self, action: #selector(BirthdayModelController.datePickerValueChanged(sender:)), for: .valueChanged)
             
             thisCell.infoTextField.inputView = datePicker
+            thisCell.infoTextField.delegate = self
             thisCell.infoTextField.placeholder = "BIRTHDAY".localized
             thisCell.infoTextField.text = birthdayReadable
         }
@@ -65,6 +66,12 @@ extension BirthdayModelController:ModelCellDelegate {
         if let thisCell = cell as? SimpleInformationEditCell {
             thisCell.infoTextField.text = birthdayReadable
         }
+    }
+}
+
+extension BirthdayModelController:UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        datePickerValueChanged(sender: datePicker)
     }
 }
 
