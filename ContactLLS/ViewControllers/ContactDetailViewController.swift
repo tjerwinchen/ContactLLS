@@ -24,6 +24,24 @@ class ContactDetailViewController: BaseViewController {
         // Do any additional setup after loading the view.
         bNeedTransparentNavigationBar = true
         
+        tableViewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(ContactDetailViewController.editTouched(sender:)))
+    }
+    
+    func editTouched(sender:Any) {
+        
+        let contactDetailEditViewCtrl = self.storyboard?.instantiateViewController(withIdentifier: "ContactDetailEditViewController") as!ContactDetailEditViewController
+        
+        let navCtrl = UINavigationController(rootViewController: contactDetailEditViewCtrl)
+        
+        contactDetailEditViewCtrl.contactModelCtrl = self.contactModelCtrl
+        
+        self.present(navCtrl, animated: true) { 
+            
+        }
+    }
+    
+    func tableViewDidLoad() {
         let headerView = ContactDetailHeaderView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 200))
         headerView.awakeFromNib()
         headerView.modelDelegate = contactModelCtrl

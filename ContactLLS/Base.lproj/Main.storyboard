@@ -12,7 +12,7 @@
         <!--Contact Detail Edit View Controller-->
         <scene sceneID="WaL-8k-o9Y">
             <objects>
-                <viewController id="eKV-X6-Cnu" customClass="ContactDetailEditViewController" customModule="ContactLLS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContactDetailEditViewController" id="eKV-X6-Cnu" customClass="ContactDetailEditViewController" customModule="ContactLLS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mDa-ZM-bvZ"/>
                         <viewControllerLayoutGuide type="bottom" id="NmW-Me-ryT"/>
@@ -182,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tNp-bw-f2O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1816.8" y="901.79910044977521"/>
+            <point key="canvasLocation" x="1873" y="904"/>
         </scene>
         <!--Contact List Search Result Table View Controller-->
         <scene sceneID="ZfA-Hp-VKL">
